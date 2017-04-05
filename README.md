@@ -7,7 +7,7 @@ a command line tool for turning html to markdown
 
 ## Usage
 
-```shell
+```text
   Usage: index [options]
 
   Options:
