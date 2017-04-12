@@ -33,7 +33,8 @@ function parseOutPath(val) {
 program
   .version(pkg.version)
   .option('-i, --input <input>', 'path to the input file', parseInPath)
-  .option('-o, --output <output>', 'path to the output file', parseOutPath);
+  .option('-o, --output <output>', 'path to the output file', parseOutPath)
+  .option('-c, --clipboard', 'use only the clipboard for input and output');
 
 program.on('--help', ()=>{
   console.log('');
@@ -44,11 +45,13 @@ program.on('--help', ()=>{
   console.log('    Optional Options:');
   console.log('        -i, --input <input>', 'path to the input file');
   console.log('        -o, --output <output>', 'path to the output file');
+  console.log('        -c, --clipboard', 'use the clipboard only. All other options will be dismissed');
   console.log('');
   console.log('    Examples:');
   console.log('        $ html2md -i ./foo.html <= output to stdout');
   console.log('        $ html2md -i ./foo.html -o out.md <= output to out.md');
   console.log('        $ html2md -o out.md <= clipboard to out.md');
+  console.log('        $ html2md -c <= clipboard to clipboard');
   console.log('        $ html2md <= clipboard to stdout');
 
   console.log('');
@@ -62,6 +65,12 @@ program.on('--help', ()=>{
 });
 program.parse(process.argv);
 
+if(program.clipboard !== undefined) {
+  data = clipboardy.readSync();
+  data = toMarkdown(data);
+  clipboardy.writeSync(data);
+  process.exit(0);
+}
 if(program.input !== undefined) {
   data = fs.readFileSync(inPath, 'utf8');
 }else{
