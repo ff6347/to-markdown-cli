@@ -17,6 +17,7 @@ a command line tool for turning html to markdown
         -V, --version          output the version number
         -i, --input <input>    path to the input file
         -o, --output <output>  path to the output file
+        -c, --clipboard        use the clipboard only. All other options will be dismissed
     
     
         html2md turns html into markdown
