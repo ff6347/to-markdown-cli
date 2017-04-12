@@ -13,7 +13,18 @@
     "commander": "^2.9.0",
     "to-markdown": "^3.0.4"
   },
+  "preferGlobal":true,
   "bin": {
     "html2md": "./index.js"
+  },
+  "repository" :"fabianmoronzirfas/to-markdown-cli",
+
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

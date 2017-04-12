@@ -7,32 +7,33 @@ a command line tool for turning html to markdown
 
 ## Usage
 
+
 ```text
-  Usage: index [options]
-
-  Options:
-
-    -h, --help             output usage information
-    -V, --version          output the version number
-    -i, --input <input>    path to the input file
-    -o, --output <output>  path to the output file
-
-
-    html2md turns html into markdown
-    if no input file is given it uses the clipboard content
-    if no output file is given it logs the result to stdout
-
-    Optional Options:
-        -i, --input <input> path to the input file
-        -o, --output <output> path to the output file
-
-    Examples:
-        $ html2md -i ./foo.html <= output to stdout
-        $ html2md -i ./foo.html -o out.md <= output to out.md
-        $ html2md -o out.md <= clipboard to out.md
-        $ html2md <= clipboard to stdout
-
+      Usage: index [options]
+    
+      Options:
+    
+        -h, --help             output usage information
+        -V, --version          output the version number
+        -i, --input <input>    path to the input file
+        -o, --output <output>  path to the output file
+    
+    
+        html2md turns html into markdown
+        if no input file is given it uses the clipboard content
+        if no output file is given it logs the result to stdout
+    
+        Optional Options:
+            -i, --input <input> path to the input file
+            -o, --output <output> path to the output file
+    
+        Examples:
+            $ html2md -i ./foo.html <= output to stdout
+            $ html2md -i ./foo.html -o out.md <= output to out.md
+            $ html2md -o out.md <= clipboard to out.md
+            $ html2md <= clipboard to stdout
 ```
+
 
 ## Test
 
