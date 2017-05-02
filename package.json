@@ -1,6 +1,6 @@
 {
   "name": "to-markdown-cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "a little cli to turn html to markdown",
   "main": "index.js",
   "scripts": {
