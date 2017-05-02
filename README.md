@@ -9,7 +9,7 @@ a command line tool for turning html to markdown
 
 
 ```text
-      Usage: index [options]
+      Usage: html2md [options]
     
       Options:
     
