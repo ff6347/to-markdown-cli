@@ -30,6 +30,9 @@
     "eslint-config-unobtrusive": "^1.2.2",
     "eslint-plugin-jest": "^21.22.0"
   },
+  "keywords": [
+    "markdown","cli","convert","html"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
