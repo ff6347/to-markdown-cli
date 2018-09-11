@@ -1,0 +1,22 @@
+{
+  "projectName": "to-markdown-cli",
+  "projectOwner": "fabianmoronzirfas",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 128,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "roose",
+      "name": "roose",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/277651?v=4",
+      "profile": "http://roose.kz",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}
