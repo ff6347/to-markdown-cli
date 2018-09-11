@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 /* eslint no-undefined: "off" */
 
 const fs = require('fs');
@@ -13,11 +12,12 @@ const clipboardy = require('clipboardy');
 const turndownService = new TurndownService();
 const gfm = turndownPluginGfm.gfm;
 
+// @ts-ignore
 const pkg = require('./package.json');
 
 let inPath = null;
 let outPath = null;
-let toStdout = true;
+// let toStdout = true;
 let data = '';
 
 function parseInPath (val) {
@@ -59,14 +59,14 @@ program.on('--help', () => {
   console.log('        $ html2md -c <= clipboard to clipboard');
   console.log('        $ html2md <= clipboard to stdout');
 
-  console.log('')
+  console.log('');
   console.log('    Acknowledgments:');
   console.log('        Build on these great modules:');
   console.log('        - https://github.com/domchristie/to-markdown');
   console.log('        - https://github.com/sindresorhus/clipboardy');
   console.log('        - https://github.com/tj/commander.js');
   console.log('');
-})
+});
 program.parse(process.argv);
 
 if (program.gfm !== undefined) {
