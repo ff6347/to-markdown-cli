@@ -4,8 +4,10 @@
   "description": "a little cli to turn html to markdown",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test:tofile": "node index.js -i test/index.html -o test/index.md",
+    "test:stdout": "node index.js -i test/index.html",
+    "test": "npm run test:tofile && npm run test:stdout"
+  }, 
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
   "dependencies": {
@@ -20,7 +22,10 @@
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
-    "cz-conventional-changelog": "^2.1.0"
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.5.0",
+    "eslint-config-unobtrusive": "^1.2.2",
+    "eslint-plugin-jest": "^21.22.0"
   },
   "config": {
     "commitizen": {
