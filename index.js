@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 /* eslint no-undefined: "off" */
 
+// @ts-ignore
 const fs = require('fs');
+// @ts-ignore
 const path = require('path');
 
 const program = require('commander');
+// @ts-ignore
 const TurndownService = require('turndown');
+// @ts-ignore
 const turndownPluginGfm = require('turndown-plugin-gfm');
 const clipboardy = require('clipboardy');
 
@@ -21,6 +25,7 @@ let outPath = null;
 let data = '';
 
 function parseInPath (val) {
+  // @ts-ignore
   if (fs.existsSync(path.resolve(process.cwd(), val))) {
     inPath = val;
   } else {
@@ -53,11 +58,12 @@ program.on('--help', () => {
   console.log('        -g, --gfm', 'use GitHub Flavored Markdown');
   console.log('');
   console.log('    Examples:');
-  console.log('        $ html2md -i ./foo.html <= output to stdout');
-  console.log('        $ html2md -i ./foo.html -o out.md <= output to out.md');
-  console.log('        $ html2md -o out.md <= clipboard to out.md');
-  console.log('        $ html2md -c <= clipboard to clipboard');
-  console.log('        $ html2md <= clipboard to stdout');
+  console.log('        $ html2md -i ./foo.html # output to stdout');
+  console.log('        $ html2md -i ./foo.html -o out.md # output to out.md');
+  console.log('        $ html2md -o out.md # clipboard to out.md');
+  console.log('        $ html2md -c # clipboard to clipboard');
+  console.log('        $ html2md # clipboard to stdout');
+  console.log('        $ html2md -g # clipboard to stdout using GitHub flavored markdown');
 
   console.log('');
   console.log('    Acknowledgments:');
@@ -67,6 +73,7 @@ program.on('--help', () => {
   console.log('        - https://github.com/tj/commander.js');
   console.log('');
 });
+// @ts-ignore
 program.parse(process.argv);
 
 if (program.gfm !== undefined) {
@@ -75,8 +82,10 @@ if (program.gfm !== undefined) {
 
 if (program.clipboard !== undefined) {
   data = clipboardy.readSync();
+  // @ts-ignore
   data = turndownService.turndown(data);
   clipboardy.writeSync(data);
+  // @ts-ignore
   process.exit(0);
 }
 
@@ -87,6 +96,7 @@ if (program.input !== undefined) {
 }
 
 if (program.output !== undefined) {
+  // @ts-ignore
   fs.writeFile(outPath, turndownService.turndown(data), 'utf8', (error, md) => {
     if (error) {
       throw error;
@@ -94,5 +104,6 @@ if (program.output !== undefined) {
     console.log(`wrote to ${outPath}`);
   });
 } else {
+  // @ts-ignore
   console.log(turndownService.turndown(data));
 }
