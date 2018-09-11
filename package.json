@@ -6,9 +6,11 @@
   "scripts": {
     "test:tofile": "node index.js -i test/index.html -o test/index.md",
     "test:stdout": "node index.js -i test/index.html",
+    "test:gfm": "node index.js -i --gfm test/index.html",
     "test": "npm run test:tofile && npm run test:stdout",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check"
   },
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
@@ -30,8 +32,15 @@
     "eslint-config-unobtrusive": "^1.2.2",
     "eslint-plugin-jest": "^21.22.0"
   },
+  "contributors": [
+    "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
+    "roose"
+  ],
   "keywords": [
-    "markdown","cli","convert","html"
+    "markdown",
+    "cli",
+    "convert",
+    "html"
   ],
   "config": {
     "commitizen": {
