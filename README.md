@@ -1,6 +1,6 @@
 # to-markdown-cli
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
-a command line tool for turning html to markdown
 
 ## Installation
 

@@ -6,7 +6,9 @@
   "scripts": {
     "test:tofile": "node index.js -i test/index.html -o test/index.md",
     "test:stdout": "node index.js -i test/index.html",
-    "test": "npm run test:tofile && npm run test:stdout"
+    "test": "npm run test:tofile && npm run test:stdout",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
@@ -22,6 +24,7 @@
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
+    "all-contributors-cli": "^5.4.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.5.0",
     "eslint-config-unobtrusive": "^1.2.2",
