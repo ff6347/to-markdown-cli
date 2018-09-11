@@ -68,7 +68,7 @@ program.on('--help', () => {
   console.log('');
   console.log('    Acknowledgments:');
   console.log('        Build on these great modules:');
-  console.log('        - https://github.com/domchristie/to-markdown');
+  console.log('        - https://github.com/domchristie/turndown');
   console.log('        - https://github.com/sindresorhus/clipboardy');
   console.log('        - https://github.com/tj/commander.js');
   console.log('');
