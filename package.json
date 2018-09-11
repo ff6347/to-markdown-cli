@@ -1,6 +1,6 @@
 {
   "name": "to-markdown-cli",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "a little cli to turn html to markdown",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,10 @@
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
   "dependencies": {
-    "clipboardy": "^1.1.0",
-    "commander": "^2.9.0",
-    "to-markdown": "^3.0.4"
+    "clipboardy": "^1.2.3",
+    "commander": "^2.18.0",
+    "turndown": "^5.0.1",
+    "turndown-plugin-gfm": "^1.0.2"
   },
   "preferGlobal": true,
   "bin": {
@@ -19,7 +20,7 @@
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
-    "cz-conventional-changelog": "^2.0.0"
+    "cz-conventional-changelog": "^2.1.0"
   },
   "config": {
     "commitizen": {
