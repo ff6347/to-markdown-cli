@@ -79,7 +79,6 @@ program.parse(process.argv);
 if (program.gfm !== undefined) {
   turndownService.use(gfm);
 }
-
 if (program.clipboard !== undefined) {
   data = clipboardy.readSync();
   // @ts-ignore
@@ -94,7 +93,6 @@ if (program.input !== undefined) {
 } else {
   data = clipboardy.readSync();
 }
-
 if (program.output !== undefined) {
   // @ts-ignore
   fs.writeFile(outPath, turndownService.turndown(data), 'utf8', (error, md) => {
