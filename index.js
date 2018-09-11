@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* eslint no-undefined: "off" */
-
 // @ts-ignore
 const fs = require('fs');
 // @ts-ignore
