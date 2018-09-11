@@ -1,6 +1,6 @@
 # to-markdown-cli
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors) [![Build Status](https://travis-ci.com/fabianmoronzirfas/to-markdown-cli.svg?branch=master)](https://travis-ci.com/fabianmoronzirfas/to-markdown-cli)
 
 ## Installation
 
