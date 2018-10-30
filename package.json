@@ -4,7 +4,7 @@
   "description": "a little cli to turn html to markdown",
   "main": "index.js",
   "scripts": {
-    "test:tofile": "node index.js -i test/index.html -o test/index.md",
+    "test:tofile": "rm test/index.md && node index.js -i test/index.html -o test/index.md",
     "test:stdout": "node index.js -i test/index.html",
     "test:gfm": "node index.js -i --gfm test/index.html",
     "test": "npm run test:tofile && npm run test:stdout",
@@ -26,6 +26,7 @@
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
+    "@types/node": "^10.12.0",
     "all-contributors-cli": "^5.4.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.5.0",

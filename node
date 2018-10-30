@@ -1,7 +1,31 @@
-#!/usr/bin/env node
+<h1>title</h1>
+<h2>subtitle</h2>
+<h3>even smaller title</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<ul>
+  <li>Point of <code>view</code> should be impersonal.</li>
+  <li>Acronyms and technical abbreviations are first introduced, then used consistently.</li>
+  <li>No slang, idioms, colloquialisms, or contractions are used.</li>
+  <li>Each sentence is grammatically correct.</li>
+  <li>Each paragraph has a clear topic with details.</li>
+  <li>The paper has a clearly defined topic. It follows a logical progression to the conclusion.</li>
+  <li>Resources are clearly cited, using one citation style consistently.</li>
+</ul>
+<ol>
+<li>Point of view should be impersonal.</li>
+<li>Acronyms and technical abbreviations are first introduced, then used consistently.</li>
+<li>No slang, idioms, colloquialisms, or contractions are used.</li>
+<li>Each sentence is grammatically correct.</li>
+<li>Each paragraph has a clear topic with details.</li>
+<li>The paper has a clearly defined topic. It follows a logical progression to the conclusion.</li>
+<li>Resources are clearly cited, using one citation style consistently.</li>
+</ol>
 
-const writeOut = require('./lib/write-out.js');
-
+<pre>
+  <code>
+  var foo = 'bar'
+</code>
+</pre>#!/usr/bin/env node
 /* eslint no-undefined: "off" */
 // @ts-ignore
 const fs = require('fs');
@@ -9,8 +33,9 @@ const fs = require('fs');
 const path = require('path');
 
 const program = require('commander');
-
+// @ts-ignore
 const TurndownService = require('turndown');
+// @ts-ignore
 const turndownPluginGfm = require('turndown-plugin-gfm');
 const clipboardy = require('clipboardy');
 
@@ -30,24 +55,13 @@ function parseInPath (val) {
   if (fs.existsSync(path.resolve(process.cwd(), val))) {
     inPath = val;
   } else {
-    process.stderr.write('the specified file path for the input file does not exist\n');
+    console.log('the specified file path for the input file does not exist');
     // process.exit(1);
   }
 }
 
 function parseOutPath (val) {
   outPath = val;
-}
-
-function output() {
-  if (program.output !== undefined) {
-    // @ts-ignore
-    writeOut(outPath, turndownService.turndown(data));
-
-  } else {
-    // @ts-ignore
-    process.stdout.write(`${turndownService.turndown(data)}\n`);
-  }
 }
 
 program
@@ -106,15 +120,18 @@ if (process.stdin.isTTY) {
   } else {
     data = clipboardy.readSync();
   }
-  output();
-  // if (program.output !== undefined) {
-  //   // @ts-ignore
-  //   writeOut(outPath, turndownService.turndown(data));
-
-  // } else {
-  //   // @ts-ignore
-  //   process.stdout.write(`${turndownService.turndown(data)}\n`);
-  // }
+  if (program.output !== undefined) {
+    // @ts-ignore
+    fs.writeFile(outPath, turndownService.turndown(data), 'utf8', (error, md) => {
+      if (error) {
+        throw error;
+      }
+      process.stderr.write(`wrote to ${outPath}\n`);
+    });
+  } else {
+    // @ts-ignore
+    process.stdout.write(`${turndownService.turndown(data)}\n`);
+  }
 } else {
   process.stdin.on('readable', function() {
     var chunk = this.read();
@@ -124,7 +141,6 @@ if (process.stdin.isTTY) {
   });
   process.stdin.on('end', function() {
     program.parse(process.argv);
-
     console.log(data);
   });
 }
