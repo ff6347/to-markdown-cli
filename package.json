@@ -1,50 +1,54 @@
 {
   "name": "to-markdown-cli",
-  "version": "0.3.4",
-  "description": "a little cli to turn html to markdown",
-  "main": "index.js",
-  "scripts": {
-    "test:tofile": "node index.js -i test/index.html -o test/index.md",
-    "test:stdout": "node index.js -i test/index.html",
-    "test:gfm": "node index.js -i --gfm test/index.html",
-    "test": "npm run test:tofile && npm run test:stdout",
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
-    "contributors:check": "all-contributors check"
-  },
-  "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
-  "license": "MIT",
-  "dependencies": {
-    "clipboardy": "^1.2.3",
-    "commander": "^2.18.0",
-    "turndown": "^5.0.1",
-    "turndown-plugin-gfm": "^1.0.2"
-  },
-  "preferGlobal": true,
+  "description": "turning HTML to MD",
+  "version": "0.4.0",
+  "author": "fmoronzirfas @fabianmoronzirfas",
   "bin": {
-    "html2md": "./index.js"
+    "html2md": "./bin/run"
+  },
+  "bugs": "https://github.com/fabianmoronzirfas/to-markdown-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.4",
+    "@oclif/config": "^1.8.8",
+    "@oclif/plugin-help": "^2.1.3",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1.2.2",
+    "@oclif/tslint": "^3.1.1",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/mock-fs": "^3.6.30",
+    "@types/node": "^10.12.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mock-fs": "^4.7.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/fabianmoronzirfas/to-markdown-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "html2md"
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
-  "devDependencies": {
-    "all-contributors-cli": "^5.4.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.5.0",
-    "eslint-config-unobtrusive": "^1.2.2",
-    "eslint-plugin-jest": "^21.22.0"
+  "scripts": {
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc -b",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
   },
-  "contributors": [
-    "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
-    "roose"
-  ],
-  "keywords": [
-    "markdown",
-    "cli",
-    "convert",
-    "html"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "types": "lib/index.d.ts"
 }

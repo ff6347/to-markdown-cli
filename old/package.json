@@ -1,0 +1,50 @@
+{
+  "name": "to-markdown-cli",
+  "version": "0.3.4",
+  "description": "a little cli to turn html to markdown",
+  "main": "index.js",
+  "scripts": {
+    "test:tofile": "node index.js -i test/index.html -o test/index.md",
+    "test:stdout": "node index.js -i test/index.html",
+    "test:gfm": "node index.js -i --gfm test/index.html",
+    "test": "npm run test:tofile && npm run test:stdout",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check"
+  },
+  "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
+  "license": "MIT",
+  "dependencies": {
+    "clipboardy": "^1.2.3",
+    "commander": "^2.18.0",
+    "turndown": "^5.0.1",
+    "turndown-plugin-gfm": "^1.0.2"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "html2md": "./index.js"
+  },
+  "repository": "fabianmoronzirfas/to-markdown-cli",
+  "devDependencies": {
+    "all-contributors-cli": "^5.4.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.5.0",
+    "eslint-config-unobtrusive": "^1.2.2",
+    "eslint-plugin-jest": "^21.22.0"
+  },
+  "contributors": [
+    "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
+    "roose"
+  ],
+  "keywords": [
+    "markdown",
+    "cli",
+    "convert",
+    "html"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
