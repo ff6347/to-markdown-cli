@@ -15,9 +15,9 @@
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
   "dependencies": {
-    "clipboardy": "^1.2.3",
-    "commander": "^2.18.0",
-    "turndown": "^5.0.1",
+    "clipboardy": "^2.1.0",
+    "commander": "^3.0.0",
+    "turndown": "^5.0.3",
     "turndown-plugin-gfm": "^1.0.2"
   },
   "preferGlobal": true,
@@ -26,11 +26,11 @@
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
-    "all-contributors-cli": "^5.4.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.5.0",
-    "eslint-config-unobtrusive": "^1.2.2",
-    "eslint-plugin-jest": "^22.1.2"
+    "all-contributors-cli": "^6.8.1",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.2.2",
+    "eslint-config-unobtrusive": "^1.2.3",
+    "eslint-plugin-jest": "^22.15.2"
   },
   "contributors": [
     "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
