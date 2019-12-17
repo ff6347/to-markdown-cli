@@ -19,7 +19,10 @@
     "prepublish": "npm run build",
     "prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
     "prettier:list": "npm run prettier -- --list-different",
-    "prettier:write": "npm run prettier -- --write"
+    "prettier:write": "npm run prettier -- --write",
+    "validate": "npm run build",
+    "lint-staged": "lint-staged",
+    "lint": "eslint './src/**/*.ts'"
   },
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
@@ -47,7 +50,9 @@
     "eslint-config-unobtrusive": "^1.2.5",
     "eslint-plugin-jest": "^22.15.2",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "mock-fs": "^4.10.4",
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
@@ -66,6 +71,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate && npm run lint-staged"
     }
   }
 }
