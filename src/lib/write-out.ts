@@ -46,11 +46,6 @@ export function writeOut(options: {
      * Output to file
      *
      */
-    fs.writeFile(outPath, convert(data, usegfm), 'utf8', (error) => {
-      if (error) {
-        throw error;
-      }
-      process.stdout.write(`wrote to ${outPath}\n`);
-    });
+    fs.writeFileSync(outPath, convert(data, usegfm), 'utf8');
   }
 }

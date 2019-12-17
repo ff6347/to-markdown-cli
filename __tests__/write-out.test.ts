@@ -24,7 +24,7 @@ describe('writeOut test', () => {
 
   test('should write to file mocked', () => {
     const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation();
-    const mockFsWrite = jest.spyOn(fs, 'writeFile');
+    const mockFsWrite = jest.spyOn(fs, 'writeFileSync');
     writeOut({ data: '<h1>foo</h1>', outPath: '/tmp/foo' });
     expect(mockFsWrite).toHaveBeenCalledTimes(1);
     mockFsWrite.mockRestore();
@@ -52,7 +52,7 @@ describe('writeOut test', () => {
   });
 
   // eslint-disable-next-line jest/no-focused-tests
-  test('should write gfm ()', () => {
+  test('should write gfm', () => {
     const mockStdout = jest.spyOn(process.stdout, 'write');
     writeOut({ data: '<del>foo</del>', usegfm: true });
     expect(mockStdout).toHaveBeenCalledTimes(1);
