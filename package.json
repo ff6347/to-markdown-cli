@@ -1,6 +1,6 @@
 {
   "name": "to-markdown-cli",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "description": "a little cli to turn html to markdown",
   "main": "dist/html2md.js",
   "scripts": {
