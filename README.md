@@ -45,14 +45,16 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 | [<img src="https://avatars3.githubusercontent.com/u/277651?v=4" width="128px;"/><br /><sub><b>roose</b></sub>](http://roose.kz)<br />[💻](https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=roose "Code") | [<img src="https://avatars3.githubusercontent.com/u/315106?v=4" width="128px;"/><br /><sub><b>Fabian Morón Zirfas</b></sub>](https://fabianmoronzirfas.me)<br />[💻](https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=fabianmoronzirfas "Code") |
-| :---: | :---: |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
 ## Test
 
-none yet
+```bash
+npm run test
+```
 
 ## Acknowledgements:
 
