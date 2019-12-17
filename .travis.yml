@@ -1,8 +1,10 @@
 language: node_js
+sudo: true
 node_js:
   - "stable"
 cache:
   directories:
     - "node_modules"
 before_script:
+  - sudo apt install xsel
   - npm run build

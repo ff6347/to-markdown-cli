@@ -32,7 +32,7 @@ describe('writeOut test', () => {
 
   test('should really write to file', () => {
     const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation();
-    const outPath = '/tmp/write-out-test.md';
+    const outPath = '__tests__/files/write-out-test.md';
     writeOut({ data: '<h1>foo</h1>', outPath });
     expect(fs.existsSync(outPath)).toBe(true);
     mockStdout.mockRestore();
