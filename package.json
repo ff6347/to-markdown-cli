@@ -2,15 +2,27 @@
   "name": "to-markdown-cli",
   "version": "0.3.5",
   "description": "a little cli to turn html to markdown",
-  "main": "index.js",
+  "main": "dist/html2md.js",
   "scripts": {
-    "test:tofile": "node index.js -i test/index.html -o test/index.md",
-    "test:stdout": "node index.js -i test/index.html",
-    "test:gfm": "node index.js -i --gfm test/index.html",
-    "test": "npm run test:tofile && npm run test:stdout",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "testWithCoverage": "jest --coverage",
+    "test:tofile": "node dist/html2md.js -i __tests__/index.html -o __tests__/index.md",
+    "//test:stdout": "node dist/index.js -i test/index.html",
+    "//test:gfm": "node dist/index.js -i --gfm test/index.html",
+    "//test": "npm run test:tofile && npm run test:stdout",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "contributors:check": "all-contributors check"
+    "contributors:check": "all-contributors check",
+    "watch": "tsc -p . -w",
+    "build": "tsc -p .",
+    "prepublish": "npm run build",
+    "prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
+    "prettier:list": "npm run prettier -- --list-different",
+    "prettier:write": "npm run prettier -- --write",
+    "validate": "npm run build",
+    "lint-staged": "lint-staged",
+    "lint": "eslint './src/**/*.ts'"
   },
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
   "license": "MIT",
@@ -22,15 +34,29 @@
   },
   "preferGlobal": true,
   "bin": {
-    "html2md": "./index.js"
+    "html2md": "./dist/html2md.js"
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/mock-fs": "^4.10.0",
+    "@types/turndown": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
     "all-contributors-cli": "^6.8.1",
     "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.2.2",
-    "eslint-config-unobtrusive": "^1.2.3",
-    "eslint-plugin-jest": "^22.15.2"
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-unobtrusive": "^1.2.5",
+    "eslint-plugin-jest": "^22.15.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "mock-fs": "^4.10.4",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
   },
   "contributors": [
     "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
@@ -45,6 +71,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate && npm run lint-staged"
     }
   }
 }
