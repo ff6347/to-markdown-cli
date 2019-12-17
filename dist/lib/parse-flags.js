@@ -11,19 +11,19 @@ const fs_1 = __importDefault(require("fs"));
 const clipboardy_1 = __importDefault(require("clipboardy"));
 const write_out_1 = require("./write-out");
 function parseFlags(options) {
-    if (options.program.clipboard !== undefined) {
+    if (options.toClipboard !== undefined) {
         if (process.stdin.isTTY === true) {
             options.data = clipboardy_1.default.readSync();
         }
     }
-    if (options.program.input !== undefined && process.stdin.isTTY === true) {
+    if (options.inPath !== undefined && process.stdin.isTTY === true) {
         options.data = fs_1.default.readFileSync(options.inPath, 'utf8');
     }
     write_out_1.writeOut({
         data: options.data,
         outPath: options.outPath,
-        usegfm: options.program.gfm,
-        toClipboard: options.program.clipboard,
+        usegfm: options.useGfm,
+        toClipboard: options.toClipboard,
     });
 }
 exports.parseFlags = parseFlags;

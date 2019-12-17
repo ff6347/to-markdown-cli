@@ -45,12 +45,7 @@ function writeOut(options) {
          * Output to file
          *
          */
-        fs_1.default.writeFile(outPath, convert(data, usegfm), 'utf8', (error) => {
-            if (error) {
-                throw error;
-            }
-            process.stdout.write(`wrote to ${outPath}\n`);
-        });
+        fs_1.default.writeFileSync(outPath, convert(data, usegfm), 'utf8');
     }
 }
 exports.writeOut = writeOut;

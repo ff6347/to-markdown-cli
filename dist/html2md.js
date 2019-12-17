@@ -63,7 +63,13 @@ commander_1.default.on('--help', () => {
 });
 if (process.stdin.isTTY) {
     commander_1.default.parse(process.argv);
-    parse_flags_1.parseFlags({ program: commander_1.default, data, inPath, outPath });
+    parse_flags_1.parseFlags({
+        data,
+        inPath,
+        outPath,
+        toClipboard: commander_1.default.clipboard ? true : false,
+        useGfm: commander_1.default.gfm ? true : false,
+    });
 }
 else {
     process.stdin.on('readable', function () {
@@ -74,7 +80,7 @@ else {
     });
     process.stdin.on('end', function () {
         commander_1.default.parse(process.argv);
-        parse_flags_1.parseFlags({ program: commander_1.default, data, inPath, outPath });
+        parse_flags_1.parseFlags({ data, inPath, outPath });
     });
 }
 //# sourceMappingURL=html2md.js.map
