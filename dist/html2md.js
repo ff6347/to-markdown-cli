@@ -17,7 +17,7 @@ function parseInPath(val) {
         inPath = val;
     }
     else {
-        console.error('the specified file path for the input file does not exist');
+        process.stderr.write('the specified file path for the input file does not exist\n');
         process.exit(1);
     }
 }
