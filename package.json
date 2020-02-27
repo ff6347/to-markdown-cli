@@ -16,7 +16,7 @@
     "contributors:check": "all-contributors check",
     "watch": "tsc -p . -w",
     "build": "tsc -p .",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
     "prettier:list": "npm run prettier -- --list-different",
     "prettier:write": "npm run prettier -- --write",

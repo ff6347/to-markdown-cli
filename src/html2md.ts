@@ -21,7 +21,7 @@ function parseInPath(val: string) {
   }
 }
 
-function parseOutPath(val: string) {
+function parseOutPath(val?: string) {
   outPath = val;
 }
 

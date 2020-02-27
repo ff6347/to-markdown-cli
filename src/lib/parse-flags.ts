@@ -14,12 +14,12 @@ export interface IParseFlagsOptions {
 }
 export function parseFlags(options: IParseFlagsOptions): void {
   if (options.toClipboard !== undefined) {
-    if (process.stdin.isTTY === true) {
+    if (process.stdin.isTTY) {
       options.data = clipboardy.readSync();
     }
   }
 
-  if (options.inPath !== undefined && process.stdin.isTTY === true) {
+  if (options.inPath !== undefined) {
     options.data = fs.readFileSync(options.inPath, 'utf8');
   }
 
