@@ -34,9 +34,12 @@
   },
   "preferGlobal": true,
   "bin": {
-    "html2md": "./dist/html2md.js"
+    "html2md": "dist/html2md.js"
   },
-  "repository": "fabianmoronzirfas/to-markdown-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabianmoronzirfas/to-markdown-cli.git"
+  },
   "devDependencies": {
     "@types/jest": "24.9.1",
     "@types/mock-fs": "4.10.0",
@@ -77,5 +80,9 @@
     "hooks": {
       "pre-commit": "npm run validate && npm run lint-staged"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/fabianmoronzirfas/to-markdown-cli/issues"
+  },
+  "homepage": "https://github.com/fabianmoronzirfas/to-markdown-cli#readme"
 }
