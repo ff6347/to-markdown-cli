@@ -27,7 +27,8 @@ function convert(data, usegfm) {
  */
 function writeOut(options) {
     const { data, usegfm, outPath, toClipboard } = options;
-    if (toClipboard !== undefined) {
+    // console.log(toClipboard, );
+    if (toClipboard === true) {
         /**
          * Output to clipboard
          */

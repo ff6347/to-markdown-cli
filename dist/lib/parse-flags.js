@@ -12,11 +12,11 @@ const clipboardy_1 = __importDefault(require("clipboardy"));
 const write_out_1 = require("./write-out");
 function parseFlags(options) {
     if (options.toClipboard !== undefined) {
-        if (process.stdin.isTTY === true) {
+        if (process.stdin.isTTY) {
             options.data = clipboardy_1.default.readSync();
         }
     }
-    if (options.inPath !== undefined && process.stdin.isTTY === true) {
+    if (options.inPath !== undefined) {
         options.data = fs_1.default.readFileSync(options.inPath, 'utf8');
     }
     write_out_1.writeOut({
