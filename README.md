@@ -1,6 +1,6 @@
 # to-markdown-cli
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg)](#contributors) [![Build Status](https://travis-ci.com/fabianmoronzirfas/to-markdown-cli.svg?branch=master)](https://travis-ci.com/fabianmoronzirfas/to-markdown-cli)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg)](#contributors) ![Node CI](https://github.com/fabianmoronzirfas/to-markdown-cli/workflows/Node%20CI/badge.svg) ![npm](https://img.shields.io/npm/v/to-markdown-cli?color=green) ![GitHub last commit](https://img.shields.io/github/last-commit/fabianmoronzirfas/to-markdown-cli)
 
 ## Installation
 
