@@ -43,9 +43,18 @@
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-| [<img src="https://avatars3.githubusercontent.com/u/277651?v=4" width="128px;"/><br /><sub><b>roose</b></sub>](http://roose.kz)<br />[💻](https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=roose "Code") | [<img src="https://avatars3.githubusercontent.com/u/315106?v=4" width="128px;"/><br /><sub><b>Fabian Morón Zirfas</b></sub>](https://fabianmoronzirfas.me)<br />[💻](https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=fabianmoronzirfas "Code") |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://roose.kz"><img src="https://avatars3.githubusercontent.com/u/277651?v=4" width="128px;" alt=""/><br /><sub><b>roose</b></sub></a><br /><a href="https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=roose" title="Code">💻</a></td>
+    <td align="center"><a href="https://fabianmoronzirfas.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4" width="128px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=fabianmoronzirfas" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/cayhorstmann"><img src="https://avatars0.githubusercontent.com/u/432187?v=4" width="128px;" alt=""/><br /><sub><b>cayhorstmann</b></sub></a><br /><a href="https://github.com/fabianmoronzirfas/to-markdown-cli/issues?q=author%3Acayhorstmann" title="Bug reports">🐛</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
