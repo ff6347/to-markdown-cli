@@ -16,7 +16,9 @@ function parseInPath(val: string) {
   if (fs.existsSync(path.resolve(process.cwd(), val))) {
     inPath = val;
   } else {
-    console.error('the specified file path for the input file does not exist');
+    process.stderr.write(
+      'the specified file path for the input file does not exist\n',
+    );
     process.exit(1);
   }
 }
