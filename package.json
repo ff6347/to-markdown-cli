@@ -38,7 +38,7 @@
   },
   "repository": "fabianmoronzirfas/to-markdown-cli",
   "devDependencies": {
-    "@types/jest": "24.0.23",
+    "@types/jest": "24.9.1",
     "@types/mock-fs": "4.10.0",
     "@types/turndown": "5.0.0",
     "@typescript-eslint/eslint-plugin": "2.12.0",
