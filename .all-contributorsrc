@@ -26,6 +26,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "cayhorstmann",
+      "name": "cayhorstmann",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/432187?v=4",
+      "profile": "https://github.com/cayhorstmann",
+      "contributions": [
+        "bug"
+      ]
     }
-  ]
+  ],
+  "skipCi": true,
+  "contributorsPerLine": 7
 }
