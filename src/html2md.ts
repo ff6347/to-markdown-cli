@@ -47,7 +47,7 @@ program.on('--help', () => {
 
     html2md turns html into markdown
 
-    - if no input file is given it ueses the clipboard content
+    - if no input file is given it uses the clipboard content
     - if no output file is given it logs the result to stdout
     - if there is input from stdin clipboard will be ignored for inputs
 
