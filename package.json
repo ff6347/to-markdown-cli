@@ -59,7 +59,7 @@
     "mock-fs": "4.12.0",
     "prettier": "2.0.5",
     "ts-jest": "25.5.1",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "contributors": [
     "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
