@@ -1,6 +1,7 @@
 # to-markdown-cli
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg)](#contributors) ![Node CI](https://github.com/fabianmoronzirfas/to-markdown-cli/workflows/Node%20CI/badge.svg) ![npm](https://img.shields.io/npm/v/to-markdown-cli?color=green) ![GitHub last commit](https://img.shields.io/github/last-commit/fabianmoronzirfas/to-markdown-cli)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli?ref=badge_shield)
 
 ## Installation
 
@@ -89,3 +90,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 see also http://www.opensource.org/licenses/mit-license.php
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli?ref=badge_large)
