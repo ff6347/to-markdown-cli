@@ -44,11 +44,11 @@
     "@types/jest": "26.0.23",
     "@types/mock-fs": "4.13.0",
     "@types/turndown": "5.0.0",
-    "@typescript-eslint/eslint-plugin": "4.26.0",
-    "@typescript-eslint/parser": "4.26.0",
+    "@typescript-eslint/eslint-plugin": "4.27.0",
+    "@typescript-eslint/parser": "4.27.0",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.28.0",
+    "eslint": "7.29.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-unobtrusive": "1.2.5",
     "eslint-plugin-jest": "24.3.6",
@@ -59,7 +59,7 @@
     "mock-fs": "5.0.0",
     "prettier": "2.3.1",
     "ts-jest": "27.0.3",
-    "typescript": "4.3.2"
+    "typescript": "4.3.4"
   },
   "contributors": [
     "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
