@@ -47,6 +47,18 @@ Options:
         - https://github.com/tj/commander.js
 ```
 
+## Troubleshooting
+
+The following error indicates that `$DISPLAY` is not set to a valid display: `Error: Both xsel and fallback failed` 
+
+**html2md** relies on a valid `$DISPLAY` because it uses clipboard via **xsel**. 
+   In some environments (for example, **tmux**) you may need to run the command as follows:
+
+```plain
+DISPLAY=:0 html2md ...  # or whatever your display id is.
+```
+Fully headless systems may not be able to use **html2md**.
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
