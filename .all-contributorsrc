@@ -1,6 +1,6 @@
 {
   "projectName": "to-markdown-cli",
-  "projectOwner": "fabianmoronzirfas",
+  "projectOwner": "ff6347",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -33,6 +33,16 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/432187?v=4",
       "profile": "https://github.com/cayhorstmann",
       "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "akomakom",
+      "name": "akomakom",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12100822?v=4",
+      "profile": "https://github.com/akomakom",
+      "contributions": [
+        "doc",
         "bug"
       ]
     }
