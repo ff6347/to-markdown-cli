@@ -68,14 +68,16 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://roose.kz"><img src="https://avatars3.githubusercontent.com/u/277651?v=4" width="128px;" alt=""/><br /><sub><b>roose</b></sub></a><br /><a href="https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=roose" title="Code">💻</a></td>
-    <td align="center"><a href="https://fabianmoronzirfas.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4" width="128px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/fabianmoronzirfas/to-markdown-cli/commits?author=fabianmoronzirfas" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/cayhorstmann"><img src="https://avatars0.githubusercontent.com/u/432187?v=4" width="128px;" alt=""/><br /><sub><b>cayhorstmann</b></sub></a><br /><a href="https://github.com/fabianmoronzirfas/to-markdown-cli/issues?q=author%3Acayhorstmann" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://roose.kz"><img src="https://avatars3.githubusercontent.com/u/277651?v=4?s=128" width="128px;" alt=""/><br /><sub><b>roose</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=roose" title="Code">💻</a></td>
+    <td align="center"><a href="https://fabianmoronzirfas.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=fabianmoronzirfas" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/cayhorstmann"><img src="https://avatars0.githubusercontent.com/u/432187?v=4?s=128" width="128px;" alt=""/><br /><sub><b>cayhorstmann</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Acayhorstmann" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/akomakom"><img src="https://avatars.githubusercontent.com/u/12100822?v=4?s=128" width="128px;" alt=""/><br /><sub><b>akomakom</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=akomakom" title="Documentation">📖</a> <a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Aakomakom" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
