@@ -41,7 +41,7 @@
     "url": "git+https://github.com/fabianmoronzirfas/to-markdown-cli.git"
   },
   "devDependencies": {
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.0.3",
     "@types/mock-fs": "4.13.1",
     "@types/turndown": "5.0.1",
     "@typescript-eslint/eslint-plugin": "4.33.0",
@@ -56,10 +56,10 @@
     "husky": "7.0.4",
     "jest": "27.3.1",
     "lint-staged": "11.2.6",
-    "mock-fs": "5.1.1",
+    "mock-fs": "5.1.2",
     "prettier": "2.4.1",
     "ts-jest": "27.0.7",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   },
   "contributors": [
     "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
