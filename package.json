@@ -1,88 +1,89 @@
 {
-  "name": "to-markdown-cli",
-  "version": "0.4.4",
-  "description": "a little cli to turn html to markdown",
-  "main": "dist/html2md.js",
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "testWithCoverage": "jest --coverage",
-    "test:tofile": "node dist/html2md.js -i __tests__/index.html -o __tests__/index.md",
-    "//test:stdout": "node dist/index.js -i test/index.html",
-    "//test:gfm": "node dist/index.js -i --gfm test/index.html",
-    "//test": "npm run test:tofile && npm run test:stdout",
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
-    "contributors:check": "all-contributors check",
-    "watch": "tsc -p . -w",
-    "build": "tsc -p .",
-    "prepare": "npm run build",
-    "prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
-    "prettier:list": "npm run prettier -- --list-different",
-    "prettier:write": "npm run prettier -- --write",
-    "validate": "npm run build",
-    "lint-staged": "lint-staged",
-    "lint": "eslint './src/**/*.ts'"
-  },
-  "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
-  "license": "MIT",
-  "dependencies": {
-    "clipboardy": "^2.1.0",
-    "commander": "^6.0.0",
-    "turndown": "^7.0.0",
-    "turndown-plugin-gfm": "^1.0.2"
-  },
-  "preferGlobal": true,
-  "bin": {
-    "html2md": "dist/html2md.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fabianmoronzirfas/to-markdown-cli.git"
-  },
-  "devDependencies": {
-    "@types/jest": "27.5.0",
-    "@types/mock-fs": "4.13.1",
-    "@types/turndown": "5.0.1",
-    "@typescript-eslint/eslint-plugin": "5.22.0",
-    "@typescript-eslint/parser": "5.22.0",
-    "all-contributors-cli": "6.20.0",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.15.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-config-unobtrusive": "1.2.5",
-    "eslint-plugin-jest": "25.7.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "husky": "7.0.4",
-    "jest": "27.5.1",
-    "lint-staged": "12.4.1",
-    "mock-fs": "5.1.2",
-    "prettier": "2.6.2",
-    "ts-jest": "27.1.4",
-    "typescript": "4.6.4"
-  },
-  "contributors": [
-    "Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
-    "roose"
-  ],
-  "keywords": [
-    "markdown",
-    "cli",
-    "convert",
-    "html"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run validate && npm run lint-staged"
-    }
-  },
-  "bugs": {
-    "url": "https://github.com/fabianmoronzirfas/to-markdown-cli/issues"
-  },
-  "homepage": "https://github.com/fabianmoronzirfas/to-markdown-cli#readme"
+	"name": "to-markdown-cli",
+	"version": "0.4.4",
+	"description": "a little cli to turn html to markdown",
+	"main": "dist/html2md.js",
+	"scripts": {
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"testWithCoverage": "jest --coverage",
+		"test:tofile": "node dist/html2md.js -i __tests__/index.html -o __tests__/index.md",
+		"//test:stdout": "node dist/index.js -i test/index.html",
+		"//test:gfm": "node dist/index.js -i --gfm test/index.html",
+		"//test": "npm run test:tofile && npm run test:stdout",
+		"contributors:add": "all-contributors add",
+		"contributors:generate": "all-contributors generate",
+		"contributors:check": "all-contributors check",
+		"watch": "tsc -p . -w",
+		"build": "tsc -p .",
+		"prepare": "npm run build",
+		"prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
+		"prettier:list": "npm run prettier -- --list-different",
+		"prettier:write": "npm run prettier -- --write",
+		"validate": "npm run build",
+		"lint-staged": "lint-staged",
+		"lint": "eslint './src/**/*.ts'"
+	},
+	"author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
+	"license": "MIT",
+	"dependencies": {
+		"clipboardy": "2.1.0",
+		"commander": "6.0.0",
+		"turndown": "7.0.0",
+		"turndown-plugin-gfm": "1.0.2"
+	},
+	"preferGlobal": true,
+	"bin": {
+		"html2md": "dist/html2md.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fabianmoronzirfas/to-markdown-cli.git"
+	},
+	"devDependencies": {
+		"@technologiestiftung/semantic-release-config": "1.2.0",
+		"@types/jest": "27.5.0",
+		"@types/mock-fs": "4.13.1",
+		"@types/turndown": "5.0.1",
+		"@typescript-eslint/eslint-plugin": "5.22.0",
+		"@typescript-eslint/parser": "5.22.0",
+		"all-contributors-cli": "6.20.0",
+		"cz-conventional-changelog": "3.3.0",
+		"eslint": "8.15.0",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-config-unobtrusive": "1.2.5",
+		"eslint-plugin-jest": "25.7.0",
+		"eslint-plugin-prettier": "4.0.0",
+		"husky": "7.0.4",
+		"jest": "27.5.1",
+		"lint-staged": "12.4.1",
+		"mock-fs": "5.1.2",
+		"prettier": "2.6.2",
+		"ts-jest": "27.1.4",
+		"typescript": "4.6.4"
+	},
+	"contributors": [
+		"Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
+		"roose"
+	],
+	"keywords": [
+		"markdown",
+		"cli",
+		"convert",
+		"html"
+	],
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run validate && npm run lint-staged"
+		}
+	},
+	"bugs": {
+		"url": "https://github.com/fabianmoronzirfas/to-markdown-cli/issues"
+	},
+	"homepage": "https://github.com/fabianmoronzirfas/to-markdown-cli#readme"
 }

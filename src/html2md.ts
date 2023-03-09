@@ -1,45 +1,45 @@
 #!/usr/bin/env node
-import fs from 'fs';
-import path from 'path';
-import program from 'commander';
-import { parseFlags } from './lib/parse-flags';
+import fs from "fs";
+import path from "path";
+import program from "commander";
+import { parseFlags } from "./lib/parse-flags";
 
-const pkg: { version: 'string'; [key: string]: any } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8'),
+const pkg: { version: "string"; [key: string]: any } = JSON.parse(
+	fs.readFileSync(path.resolve(__dirname, "../package.json"), "utf8"),
 );
 
 let inPath: any = undefined;
 let outPath: any = undefined;
-let data = '';
+let data = "";
 
 function parseInPath(val: string) {
-  if (fs.existsSync(path.resolve(process.cwd(), val))) {
-    inPath = val;
-  } else {
-    process.stderr.write(
-      'the specified file path for the input file does not exist\n',
-    );
-    process.exit(1);
-  }
+	if (fs.existsSync(path.resolve(process.cwd(), val))) {
+		inPath = val;
+	} else {
+		process.stderr.write(
+			"the specified file path for the input file does not exist\n",
+		);
+		process.exit(1);
+	}
 }
 
 function parseOutPath(val?: string) {
-  outPath = val;
+	outPath = val;
 }
 
 program
-  .version(pkg.version)
-  .option(
-    '-i, --input <input>',
-    'path to the input file (if input is stdin) it will be ignored',
-    parseInPath,
-  )
-  .option('-o, --output <output>', 'path to the output file', parseOutPath)
-  .option('-c, --clipboard', 'use only the clipboard for input and output')
-  .option('-g, --gfm', 'use GitHub Flavored Markdown');
+	.version(pkg.version)
+	.option(
+		"-i, --input <input>",
+		"path to the input file (if input is stdin) it will be ignored",
+		parseInPath,
+	)
+	.option("-o, --output <output>", "path to the output file", parseOutPath)
+	.option("-c, --clipboard", "use only the clipboard for input and output")
+	.option("-g, --gfm", "use GitHub Flavored Markdown");
 
-program.on('--help', () => {
-  process.stdout.write(`
+program.on("--help", () => {
+	process.stdout.write(`
      _   _   _   _   _   _   _
     / \\ / \\ / \\ / \\ / \\ / \\ / \\
    ( h | t | m | l | 2 | m | d )
@@ -71,23 +71,23 @@ program.on('--help', () => {
 });
 
 if (process.stdin.isTTY) {
-  program.parse(process.argv);
-  parseFlags({
-    data,
-    inPath,
-    outPath,
-    toClipboard: program.clipboard ? true : false,
-    useGfm: program.gfm ? true : false,
-  });
+	program.parse(process.argv);
+	parseFlags({
+		data,
+		inPath,
+		outPath,
+		toClipboard: program.clipboard ? true : false,
+		useGfm: program.gfm ? true : false,
+	});
 } else {
-  process.stdin.on('readable', function(this: any) {
-    const chunk = this.read();
-    if (chunk !== null) {
-      data += chunk;
-    }
-  });
-  process.stdin.on('end', function() {
-    program.parse(process.argv);
-    parseFlags({ data, inPath, outPath });
-  });
+	process.stdin.on("readable", function (this: any) {
+		const chunk = this.read();
+		if (chunk !== null) {
+			data += chunk;
+		}
+	});
+	process.stdin.on("end", function () {
+		program.parse(process.argv);
+		parseFlags({ data, inPath, outPath });
+	});
 }
