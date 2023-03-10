@@ -1,7 +1,7 @@
 # to-markdown-cli
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg)](#contributors) ![Node CI](https://github.com/fabianmoronzirfas/to-markdown-cli/workflows/Node%20CI/badge.svg) ![npm](https://img.shields.io/npm/v/to-markdown-cli?color=green) ![GitHub last commit](https://img.shields.io/github/last-commit/fabianmoronzirfas/to-markdown-cli)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli?ref=badge_shield)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg)](#contributors) ![Node CI](https://github.com/ff6347/to-markdown-cli/workflows/Node%20CI/badge.svg) ![npm](https://img.shields.io/npm/v/to-markdown-cli?color=green) ![GitHub last commit](https://img.shields.io/github/last-commit/ff6347/to-markdown-cli)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fff6347%2Fto-markdown-cli.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fff6347%2Fto-markdown-cli?ref=badge_shield)
 
 ## Installation
 
@@ -70,7 +70,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <table>
   <tr>
     <td align="center"><a href="http://roose.kz"><img src="https://avatars3.githubusercontent.com/u/277651?v=4?s=128" width="128px;" alt=""/><br /><sub><b>roose</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=roose" title="Code">💻</a></td>
-    <td align="center"><a href="https://fabianmoronzirfas.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=fabianmoronzirfas" title="Code">💻</a></td>
+    <td align="center"><a href="https://ff6347.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=ff6347" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cayhorstmann"><img src="https://avatars0.githubusercontent.com/u/432187?v=4?s=128" width="128px;" alt=""/><br /><sub><b>cayhorstmann</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Acayhorstmann" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/akomakom"><img src="https://avatars.githubusercontent.com/u/12100822?v=4?s=128" width="128px;" alt=""/><br /><sub><b>akomakom</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=akomakom" title="Documentation">📖</a> <a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Aakomakom" title="Bug reports">🐛</a></td>
   </tr>
@@ -106,4 +106,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 see also http://www.opensource.org/licenses/mit-license.php
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffabianmoronzirfas%2Fto-markdown-cli?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fff6347%2Fto-markdown-cli.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fff6347%2Fto-markdown-cli?ref=badge_large)
