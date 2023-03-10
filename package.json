@@ -24,7 +24,7 @@
 		"lint-staged": "lint-staged",
 		"lint": "eslint './src/**/*.ts'"
 	},
-	"author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
+	"author": "Fabian Morón Zirfas <icke@fabianmoronzirfas.me> (http://fabianmoronzirfas.me)",
 	"license": "MIT",
 	"dependencies": {
 		"clipboardy": "2.1.0",
@@ -38,7 +38,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/fabianmoronzirfas/to-markdown-cli.git"
+		"url": "git+https://github.com/ff6347/to-markdown-cli.git"
 	},
 	"devDependencies": {
 		"@technologiestiftung/semantic-release-config": "1.2.0",
@@ -63,7 +63,7 @@
 		"typescript": "4.6.4"
 	},
 	"contributors": [
-		"Fabian Morón Zirfas <fabian.moron.zirfas@gmail.com> (https://fabianmoronzirfas.me)",
+		"Fabian Morón Zirfas <icke@fabianmoronzirfas.me> (https://fabianmoronzirfas.me)",
 		"roose"
 	],
 	"keywords": [
