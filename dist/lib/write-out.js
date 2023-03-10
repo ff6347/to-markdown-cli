@@ -1,26 +1,18 @@
-"use strict";
-var __importDefault =
-	(this && this.__importDefault) ||
-	function (mod) {
-		return mod && mod.__esModule ? mod : { default: mod };
-	};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.writeOut = void 0;
-const fs_1 = __importDefault(require("fs"));
-const turndown_1 = __importDefault(require("turndown"));
+import fs from "fs";
+import TurndownService from "turndown";
 const turndownPluginGfm = require("turndown-plugin-gfm");
-const turndownService = new turndown_1.default();
+const turndownService = new TurndownService();
 const gfm = turndownPluginGfm.gfm;
-const clipboardy_1 = __importDefault(require("clipboardy"));
+import clipboardy from "clipboardy";
 /**
  * Converts input html to markdown
  * Optional flag for using GitHub Flavoured Markdown
  */
 function convert(data, usegfm) {
-	if (usegfm !== undefined) {
-		turndownService.use(gfm);
-	}
-	return turndownService.turndown(data);
+    if (usegfm !== undefined) {
+        turndownService.use(gfm);
+    }
+    return turndownService.turndown(data);
 }
 /**
  * Writes output to
@@ -28,28 +20,28 @@ function convert(data, usegfm) {
  * - clipboardy
  * - file
  */
-function writeOut(options) {
-	const { data, usegfm, outPath, toClipboard } = options;
-	// console.log(toClipboard, );
-	if (toClipboard === true) {
-		/**
-		 * Output to clipboard
-		 */
-		clipboardy_1.default.writeSync(`${convert(data, usegfm)}\n`);
-		process.exit(0);
-	}
-	if (outPath === undefined) {
-		/**
-		 * Output to stdout
-		 */
-		process.stdout.write(`${convert(data, usegfm)}\n`);
-	} else {
-		/**
-		 * Output to file
-		 *
-		 */
-		fs_1.default.writeFileSync(outPath, convert(data, usegfm), "utf8");
-	}
+export function writeOut(options) {
+    const { data, usegfm, outPath, toClipboard } = options;
+    // console.log(toClipboard, );
+    if (toClipboard === true) {
+        /**
+         * Output to clipboard
+         */
+        clipboardy.writeSync(`${convert(data, usegfm)}\n`);
+        process.exit(0);
+    }
+    if (outPath === undefined) {
+        /**
+         * Output to stdout
+         */
+        process.stdout.write(`${convert(data, usegfm)}\n`);
+    }
+    else {
+        /**
+         * Output to file
+         *
+         */
+        fs.writeFileSync(outPath, convert(data, usegfm), "utf8");
+    }
 }
-exports.writeOut = writeOut;
 //# sourceMappingURL=write-out.js.map
