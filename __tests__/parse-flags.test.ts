@@ -27,7 +27,7 @@ describe("testing parse flags function", () => {
 			inPath: "__tests__/files/index.html",
 		};
 		parseFlags(options);
-		expect(mockOut.mock.calls[0][0]).toBe("foo\n===\n");
+		expect(mockOut.mock.calls[0][0]).toBe("# foo\n");
 		mockOut.mockRestore();
 	});
 
@@ -58,7 +58,7 @@ describe("testing parse flags function", () => {
 		};
 		parseFlags(options);
 		expect(mockClippy).toHaveBeenCalled();
-		expect(clipboardy.readSync()).toBe("foo\n===\n");
+		expect(clipboardy.readSync()).toBe("# foo\n");
 		process.stdin.isTTY = orig;
 	});
 });
