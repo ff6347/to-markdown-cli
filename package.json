@@ -3,7 +3,7 @@
 	"version": "0.4.5",
 	"description": "a little cli to turn html to markdown",
 	"engines": {
-		"node": ">=14.16"
+		"node": ">=16"
 	},
 	"type": "module",
 	"main": "dist/html2md.js",
