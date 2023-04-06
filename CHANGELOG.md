@@ -1,3 +1,16 @@
+# [1.0.0](https://github.com/ff6347/to-markdown-cli/compare/v0.4.5...v1.0.0) (2023-04-06)
+
+
+### Features
+
+* **esm:** Convert to esm ([7c86b98](https://github.com/ff6347/to-markdown-cli/commit/7c86b985553b01253b5c11cf4ced29c1a640d8ef))
+* **node:** Minimal node version 16 ([52ed6a8](https://github.com/ff6347/to-markdown-cli/commit/52ed6a8af84a08a26c2ac25ed266ebe4d684e41f))
+
+
+### BREAKING CHANGES
+
+* **node:** Dropping suppoer for Node 14
+
 ## [0.4.5](https://github.com/ff6347/to-markdown-cli/compare/v0.4.4...v0.4.5) (2023-03-10)
 
 
