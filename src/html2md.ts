@@ -2,7 +2,10 @@
 import fs from "fs";
 import path from "path";
 import program from "commander";
-import { parseFlags } from "./lib/parse-flags";
+import { parseFlags } from "./lib/parse-flags.js";
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const pkg: { version: "string"; [key: string]: any } = JSON.parse(
 	fs.readFileSync(path.resolve(__dirname, "../package.json"), "utf8"),

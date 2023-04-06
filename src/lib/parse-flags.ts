@@ -4,7 +4,7 @@ import fs from "fs";
 // const turndownService = new TurndownService();
 // const gfm = turndownPluginGfm.gfm;
 import clipboardy from "clipboardy";
-import { writeOut } from "./write-out";
+import { writeOut } from "./write-out.js";
 export interface IParseFlagsOptions {
 	data: string;
 	inPath?: string;

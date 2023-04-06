@@ -1,8 +1,7 @@
 import fs from "fs";
 import TurndownService from "turndown";
-const turndownPluginGfm = require("turndown-plugin-gfm");
-const turndownService = new TurndownService();
-const gfm = turndownPluginGfm.gfm;
+import {gfm} from "turndown-plugin-gfm";
+const turndownService = new TurndownService({ headingStyle: "atx"});
 import clipboardy from "clipboardy";
 
 /**
