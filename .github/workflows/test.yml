@@ -31,7 +31,7 @@ jobs:
       - name: shell test
         run: |
           npm link
-          sh __tests__/shell.test.sh
+          ./__tests__/shell.test.sh
 
       - name: Setup tmate session
         if: ${{ failure() }}
