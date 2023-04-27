@@ -1,10 +1,5 @@
 import fs from "fs";
-// import TurndownService from 'turndown';
-// const turndownPluginGfm = require('turndown-plugin-gfm');
-// const turndownService = new TurndownService();
-// const gfm = turndownPluginGfm.gfm;
 import clipboardy from "clipboardy";
-import { writeOut } from "./write-out.js";
 export interface IParseFlagsOptions {
 	data: string;
 	inPath?: string;
@@ -12,10 +7,20 @@ export interface IParseFlagsOptions {
 	toClipboard?: boolean;
 	useGfm?: boolean;
 }
-export function parseFlags(options: IParseFlagsOptions): void {
+
+export function parseFlags(options: IParseFlagsOptions): IParseFlagsOptions {
 	if (options.toClipboard !== undefined) {
 		if (process.stdin.isTTY) {
-			options.data = clipboardy.readSync();
+			try {
+				options.data = clipboardy.readSync();
+			} catch (error) {
+				if (error instanceof Error) {
+					process.stdout.write(`${error.message}\n`);
+					if (process.env.NODE_ENV !== "test") process.exit(1);
+				} else {
+					if (process.env.NODE_ENV !== "test") process.exit(1);
+				}
+			}
 		}
 	}
 
@@ -23,10 +28,10 @@ export function parseFlags(options: IParseFlagsOptions): void {
 		options.data = fs.readFileSync(options.inPath, "utf8");
 	}
 
-	writeOut({
+	return {
 		data: options.data,
 		outPath: options.outPath,
-		usegfm: options.useGfm,
+		useGfm: options.useGfm,
 		toClipboard: options.toClipboard,
-	});
+	};
 }
