@@ -3,7 +3,8 @@ import fs from "fs";
 import path from "path";
 import program from "commander";
 import { parseFlags } from "./lib/parse-flags.js";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
+import { writeOut } from "./lib/write-out.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -75,13 +76,14 @@ program.on("--help", () => {
 
 if (process.stdin.isTTY) {
 	program.parse(process.argv);
-	parseFlags({
+	const opts = parseFlags({
 		data,
 		inPath,
 		outPath,
 		toClipboard: program.clipboard ? true : false,
 		useGfm: program.gfm ? true : false,
 	});
+	writeOut(opts);
 } else {
 	process.stdin.on("readable", function (this: any) {
 		const chunk = this.read();
@@ -91,6 +93,7 @@ if (process.stdin.isTTY) {
 	});
 	process.stdin.on("end", function () {
 		program.parse(process.argv);
-		parseFlags({ data, inPath, outPath });
+		const opts = parseFlags({ data, inPath, outPath });
+		writeOut(opts);
 	});
 }
