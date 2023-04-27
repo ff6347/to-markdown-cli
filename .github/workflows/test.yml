@@ -52,8 +52,6 @@ jobs:
           CI: true
           NODE_ENV: test
       - name: shell test
-        # set bash shell for run commands
-        shell: bash
         run: |
           npm link
           sh __tests__/shell.test.sh
@@ -61,7 +59,7 @@ jobs:
       - name: Setup tmate session
         if: ${{ failure() }}
         uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 3
+        timeout-minutes: 5
         with:
           limit-access-to-actor: true
   release:
