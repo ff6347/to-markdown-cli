@@ -29,6 +29,7 @@ jobs:
           xvfb-run npm test
         env:
           CI: true
+          NODE_ENV: test
   release:
     name: semantic-release
     needs: [build]
