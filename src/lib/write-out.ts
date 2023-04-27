@@ -1,7 +1,10 @@
 import fs from "fs";
 import TurndownService from "turndown";
-import {gfm} from "turndown-plugin-gfm";
-const turndownService = new TurndownService({ headingStyle: "atx"});
+import { gfm } from "turndown-plugin-gfm";
+const turndownService = new TurndownService({
+	headingStyle: "atx",
+	bulletListMarker: "-",
+});
 import clipboardy from "clipboardy";
 
 /**
@@ -24,28 +27,37 @@ function convert(data: string, usegfm?: any): string {
 export function writeOut(options: {
 	data: string;
 	outPath?: string;
-	usegfm?: any;
+	useGfm?: any;
 	toClipboard?: any;
 }): void {
-	const { data, usegfm, outPath, toClipboard } = options;
+	const { data, useGfm, outPath, toClipboard } = options;
 	// console.log(toClipboard, );
 	if (toClipboard === true) {
 		/**
 		 * Output to clipboard
 		 */
-		clipboardy.writeSync(`${convert(data, usegfm)}\n`);
-		process.exit(0);
+
+		try {
+			clipboardy.writeSync(`${convert(data, useGfm)}\n`);
+		} catch (error) {
+			if (error instanceof Error) {
+				process.stdout.write(`${error.message}\n`);
+				if (process.env.NODE_ENV !== "test") process.exit(1);
+			} else {
+				if (process.env.NODE_ENV !== "test") process.exit(1);
+			}
+		}
 	}
 	if (outPath === undefined) {
 		/**
 		 * Output to stdout
 		 */
-		process.stdout.write(`${convert(data, usegfm)}\n`);
+		process.stdout.write(`${convert(data, useGfm)}\n`);
 	} else {
 		/**
 		 * Output to file
 		 *
 		 */
-		fs.writeFileSync(outPath, convert(data, usegfm), "utf8");
+		fs.writeFileSync(outPath, convert(data, useGfm), "utf8");
 	}
 }
