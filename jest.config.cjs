@@ -1,12 +1,8 @@
 module.exports = {
 	transform: {
-		"\\.[jt]sx?$": "ts-jest",
+		"\\.[jt]sx?$": ["ts-jest", { useESM: true }],
 	},
-	globals: {
-		"ts-jest": {
-			useESM: true,
-		},
-	},
+
 	moduleNameMapper: {
 		"(.+)\\.js": "$1",
 	},

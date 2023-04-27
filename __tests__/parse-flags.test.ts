@@ -1,64 +1,140 @@
-import { IParseFlagsOptions } from "./../src/lib/parse-flags";
-import * as writer from "../src/lib/write-out";
-import clipboardy from "clipboardy";
-import { parseFlags } from "../src/lib/parse-flags";
 import fs from "fs";
+import * as clipboardy from "clipboardy";
 
-jest.spyOn(process.stdout, "write").mockImplementation();
-afterAll(() => {
-	jest.restoreAllMocks();
-});
-describe("testing parse flags function", () => {
-	test("write out call", () => {
-		const writeOutMock = jest.spyOn(writer, "writeOut");
-		parseFlags({
-			data: "<h1>foo</h1>",
-			inPath: undefined,
-			outPath: undefined,
-		});
-		expect(writeOutMock).toHaveBeenCalledTimes(1);
-		writeOutMock.mockRestore();
+import { IParseFlagsOptions, parseFlags } from "../src/lib/parse-flags";
+
+jest.mock("fs");
+
+describe("parseFlags", () => {
+	const originalIsTTY = process.stdin.isTTY;
+
+	afterEach(() => {
+		jest.resetAllMocks();
+		jest.restoreAllMocks();
+		process.stdin.isTTY = originalIsTTY;
 	});
 
-	test("input from file", () => {
-		const mockOut = jest.spyOn(process.stdout, "write");
+	it("should return the same data when no inPath or toClipboard options are set", () => {
+		const options: IParseFlagsOptions = {
+			data: "test data",
+		};
+
+		const result = parseFlags(options);
+		expect(result.data).toEqual(options.data);
+	});
+
+	it("should read data from inPath when inPath is set", () => {
 		const options: IParseFlagsOptions = {
 			data: "",
-			inPath: "__tests__/files/index.html",
+			inPath: "input.txt",
 		};
-		parseFlags(options);
-		expect(mockOut.mock.calls[0][0]).toBe("# foo\n");
-		mockOut.mockRestore();
+
+		const fileContent = "file content";
+		(fs.readFileSync as jest.Mock).mockReturnValue(fileContent);
+
+		const result = parseFlags(options);
+		expect(fs.readFileSync).toHaveBeenCalledWith(options.inPath, "utf8");
+		expect(result.data).toEqual(fileContent);
 	});
 
-	test("input from file fs read", () => {
-		const orig = process.stdin.isTTY;
-		process.stdin.isTTY = true;
-		const mockFsReadSync = jest.spyOn(fs, "readFileSync");
+	it("should return useGfm as true when useGfm option is set", () => {
 		const options: IParseFlagsOptions = {
-			data: "",
-			inPath: "__tests__/files/index.html",
+			data: "test data",
+			useGfm: true,
 		};
-		parseFlags(options);
-		expect(mockFsReadSync).toHaveBeenCalled();
-		mockFsReadSync.mockRestore();
-		process.stdin.isTTY = orig;
+
+		const result = parseFlags(options);
+		expect(result.useGfm).toBe(true);
 	});
 
-	test("set and write to clipboard", () => {
-		const orig = process.stdin.isTTY;
-		process.stdin.isTTY = true;
-		jest.spyOn(process, "exit").mockImplementation();
-		const mockClippy = jest.spyOn(clipboardy, "writeSync");
-		const data = "<h1>foo</h1>";
-		clipboardy.writeSync(data);
+	it("should return useGfm as false when useGfm option is not set", () => {
+		const options: IParseFlagsOptions = {
+			data: "test data",
+		};
+
+		const result = parseFlags(options);
+		expect(result.useGfm).toBeUndefined();
+	});
+
+	it("should read data from clipboard when toClipboard is set and process.stdin.isTTY is true", async () => {
 		const options: IParseFlagsOptions = {
 			data: "",
 			toClipboard: true,
 		};
-		parseFlags(options);
-		expect(mockClippy).toHaveBeenCalled();
-		expect(clipboardy.readSync()).toBe("# foo\n");
-		process.stdin.isTTY = orig;
+
+		const clipboardContent = "clipboard content";
+		const clipboardyMock = jest.fn().mockReturnValue(clipboardContent);
+
+		process.stdin.isTTY = true;
+		jest.mock("clipboardy", () => {
+			return {
+				__esModule: true,
+				default: {
+					...clipboardy,
+					readSync: clipboardyMock,
+				},
+			};
+		});
+
+		let parseFlags;
+		jest.isolateModules(async () => {
+			parseFlags = require("../src/lib/parse-flags").parseFlags;
+			await parseFlags(options);
+		});
+
+		expect(clipboardyMock).toHaveBeenCalled();
+		expect(options.data).toEqual(clipboardContent);
+	});
+
+	it("should not read data from clipboard when process.stdin.isTTY is false", async () => {
+		const options: IParseFlagsOptions = {
+			data: "",
+			toClipboard: true,
+		};
+		process.stdin.isTTY = false;
+
+		const clipboardyMock = {
+			readSync: jest.fn(),
+		};
+		jest.mock("clipboardy", () => clipboardyMock);
+
+		let parseFlags;
+		await jest.isolateModules(async () => {
+			parseFlags = require("../src/lib/parse-flags").parseFlags;
+			await parseFlags(options);
+		});
+
+		process.stdin.isTTY = originalIsTTY;
+		expect(clipboardyMock.readSync).not.toHaveBeenCalled();
+	});
+
+	it("should handle clipboardy.readSync() error and output error message", async () => {
+		const options: IParseFlagsOptions = {
+			data: "",
+			toClipboard: true,
+		};
+		process.stdin.isTTY = true;
+		const stdoutSpy = jest.spyOn(process.stdout, "write").mockImplementation();
+
+		const errorMessage = "Clipboard read error";
+
+		await jest.isolateModules(async () => {
+			jest.mock("clipboardy", () => {
+				return {
+					__esModule: true,
+					default: {
+						...clipboardy,
+						readSync: jest.fn().mockImplementation(() => {
+							throw new Error(errorMessage);
+						}),
+					},
+				};
+			});
+
+			const { parseFlags } = require("../src/lib/parse-flags");
+
+			parseFlags(options);
+			expect(stdoutSpy).toHaveBeenCalledWith(`${errorMessage}\n`);
+		});
 	});
 });

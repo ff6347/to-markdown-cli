@@ -1,62 +1,120 @@
-import { writeOut } from "../src/lib/write-out";
 import fs from "fs";
-import path from "path";
 import clipboardy from "clipboardy";
-// jest.mock('fs');
+import { writeOut } from "../src/lib/write-out";
 
-const mockProcessExit = jest.spyOn(process, "exit").mockImplementation();
-const mockClippyWrite = jest.spyOn(clipboardy, "writeSync");
-afterAll(() => {
-	jest.restoreAllMocks();
-});
+jest.mock("fs");
+jest.mock("clipboardy");
 
-afterEach(() => {
-	jest.resetAllMocks();
-});
-
-describe("writeOut test", () => {
-	test("should write to stdout", () => {
-		const mockStdout = jest.spyOn(process.stdout, "write").mockImplementation();
-		writeOut({ data: "<h1>foo</h1>" });
-		expect(mockStdout).toHaveBeenCalledTimes(1);
-		mockStdout.mockRestore();
+describe("writeOut", () => {
+	afterEach(() => {
+		jest.resetAllMocks();
+		jest.restoreAllMocks();
 	});
 
-	test("should write to file mocked", () => {
-		const mockStdout = jest.spyOn(process.stdout, "write").mockImplementation();
-		const mockFsWrite = jest.spyOn(fs, "writeFileSync");
-		writeOut({ data: "<h1>foo</h1>", outPath: "/tmp/foo" });
-		expect(mockFsWrite).toHaveBeenCalledTimes(1);
-		mockFsWrite.mockRestore();
-		mockStdout.mockRestore();
+	it("should write data to clipboard when toClipboard is true", () => {
+		const options = {
+			data: "<h1>Test</h1>",
+			useGfm: true,
+			toClipboard: true,
+		};
+
+		writeOut(options);
+		expect(clipboardy.writeSync).toHaveBeenCalledWith("# Test\n");
 	});
 
-	test("should really write to file", () => {
-		const mockStdout = jest.spyOn(process.stdout, "write").mockImplementation();
-		const outPath = path.resolve(
-			process.cwd(),
-			"__tests__/files/write-out-test.md",
+	it("should handle gfm features task list", () => {
+		const options = {
+			data: `<ul><li><input disabled="" type="checkbox">foo</li><li><input checked="" disabled="" type="checkbox">bar</li></ul>`,
+			useGfm: true,
+		};
+
+		const stdoutSpy = jest.spyOn(process.stdout, "write").mockImplementation();
+
+		writeOut(options);
+		expect(stdoutSpy).toHaveBeenCalledWith("-   [ ] foo\n-   [x] bar\n");
+	});
+
+	it("should handle gfm features strike through", () => {
+		const options = {
+			data: "<p><del>Hi</del> Hello, <del>there</del> world!</p>",
+			useGfm: true,
+		};
+
+		const stdoutSpy = jest.spyOn(process.stdout, "write").mockImplementation();
+
+		writeOut(options);
+		expect(stdoutSpy).toHaveBeenCalledWith("~Hi~ Hello, ~there~ world!\n");
+	});
+
+	it("should handle gfm features table", () => {
+		const options = {
+			data: `<table>
+      <thead>
+      <tr>
+      <th>foo</th>
+      <th>bar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>baz</td>
+      <td>bim</td>
+      </tr>
+      </tbody>
+      </table>`,
+			useGfm: true,
+		};
+
+		const stdoutSpy = jest.spyOn(process.stdout, "write").mockImplementation();
+
+		writeOut(options);
+		expect(stdoutSpy).toHaveBeenCalledWith(
+			"| foo | bar |\n| --- | --- |\n| baz | bim |\n",
 		);
-		writeOut({ data: "<h1>foo</h1>", outPath });
-		expect(fs.existsSync(outPath)).toBe(true);
-		mockStdout.mockRestore();
 	});
 
-	test("should write to clipboard", () => {
-		const mockStdout = jest.spyOn(process.stdout, "write").mockImplementation();
-		writeOut({ data: "<h1>foo</h1>", toClipboard: true });
-		expect(mockClippyWrite).toHaveBeenCalledTimes(1);
-		expect(mockProcessExit).toHaveBeenCalledTimes(1);
-		// expect(mockStdout).toHaveBeenCalledTimes(0);
-		mockStdout.mockRestore();
+	it("should write data to stdout when outPath is undefined", () => {
+		const options = {
+			data: "<h1>Test</h1>",
+			useGfm: true,
+		};
+
+		const stdoutSpy = jest.spyOn(process.stdout, "write").mockImplementation();
+
+		writeOut(options);
+		expect(stdoutSpy).toHaveBeenCalledWith("# Test\n");
 	});
 
-	// eslint-disable-next-line jest/no-focused-tests
-	test("should write gfm", () => {
-		const mockStdout = jest.spyOn(process.stdout, "write");
-		writeOut({ data: "<del>foo</del>", usegfm: true });
-		expect(mockStdout).toHaveBeenCalledTimes(1);
-		expect(mockStdout.mock.calls[0][0]).toBe("~foo~\n");
-		mockStdout.mockRestore();
+	it("should write data to file when outPath is defined", () => {
+		const options = {
+			data: "<h1>Test</h1>",
+			useGfm: true,
+			outPath: "output.md",
+		};
+
+		writeOut(options);
+		expect(fs.writeFileSync).toHaveBeenCalledWith(
+			options.outPath,
+			"# Test",
+			"utf8",
+		);
+	});
+
+	it("should handle clipboardy.writeSync() error and output error message", () => {
+		const options = {
+			data: "<h1>Test</h1>",
+			useGfm: true,
+			toClipboard: true,
+		};
+
+		const errorMessage = "Clipboard write error";
+		(clipboardy.writeSync as jest.Mock).mockImplementation(() => {
+			throw new Error(errorMessage);
+		});
+
+		const stdoutSpy = jest.spyOn(process.stdout, "write").mockImplementation();
+
+		writeOut(options);
+		expect(stdoutSpy).toHaveBeenCalledWith(`${errorMessage}\n`);
 	});
 });
