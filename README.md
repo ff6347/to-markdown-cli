@@ -68,12 +68,15 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="http://roose.kz"><img src="https://avatars3.githubusercontent.com/u/277651?v=4?s=128" width="128px;" alt=""/><br /><sub><b>roose</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=roose" title="Code">💻</a></td>
-    <td align="center"><a href="https://ff6347.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4?s=128" width="128px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=ff6347" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/cayhorstmann"><img src="https://avatars0.githubusercontent.com/u/432187?v=4?s=128" width="128px;" alt=""/><br /><sub><b>cayhorstmann</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Acayhorstmann" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/akomakom"><img src="https://avatars.githubusercontent.com/u/12100822?v=4?s=128" width="128px;" alt=""/><br /><sub><b>akomakom</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=akomakom" title="Documentation">📖</a> <a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Aakomakom" title="Bug reports">🐛</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://roose.kz"><img src="https://avatars3.githubusercontent.com/u/277651?v=4?s=128" width="128px;" alt="roose"/><br /><sub><b>roose</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=roose" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://fabianmoronzirfas.me"><img src="https://avatars3.githubusercontent.com/u/315106?v=4?s=128" width="128px;" alt="Fabian Morón Zirfas"/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=fabianmoronzirfas" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/cayhorstmann"><img src="https://avatars0.githubusercontent.com/u/432187?v=4?s=128" width="128px;" alt="cayhorstmann"/><br /><sub><b>cayhorstmann</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Acayhorstmann" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/akomakom"><img src="https://avatars.githubusercontent.com/u/12100822?v=4?s=128" width="128px;" alt="akomakom"/><br /><sub><b>akomakom</b></sub></a><br /><a href="https://github.com/ff6347/to-markdown-cli/commits?author=akomakom" title="Documentation">📖</a> <a href="https://github.com/ff6347/to-markdown-cli/issues?q=author%3Aakomakom" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/thenbe"><img src="https://avatars.githubusercontent.com/u/33713262?v=4?s=128" width="128px;" alt="thenbe"/><br /><sub><b>thenbe</b></sub></a><br /><a href="#ideas-thenbe" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
