@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/ff6347/to-markdown-cli/compare/v1.0.0...v1.1.0) (2023-04-27)
+
+
+### Features
+
+* **no xsel:** Refactor function to warn if xsel is not installed ([964cfc4](https://github.com/ff6347/to-markdown-cli/commit/964cfc41c626b1007b9a012a19319bb17dc6c052))
+* Refactor function to warn if xsel is not installed on ([ad49b3e](https://github.com/ff6347/to-markdown-cli/commit/ad49b3e65c609787104a37fbf7e9055dee592e3b))
+
 # [1.0.0](https://github.com/ff6347/to-markdown-cli/compare/v0.4.5...v1.0.0) (2023-04-06)
 
 
