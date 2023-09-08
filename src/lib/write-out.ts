@@ -11,7 +11,7 @@ import clipboardy from "clipboardy";
  * Converts input html to markdown
  * Optional flag for using GitHub Flavoured Markdown
  */
-function convert(data: string, usegfm?: any): string {
+export function convert(data: string, usegfm?: any): string {
 	if (usegfm !== undefined) {
 		turndownService.use(gfm);
 	}

@@ -1,10 +1,41 @@
 import fs from "fs";
 import clipboardy from "clipboardy";
-import { writeOut } from "../src/lib/write-out";
+import { writeOut, convert } from "../src/lib/write-out";
 
 jest.mock("fs");
 jest.mock("clipboardy");
 
+describe("convert", () => {
+	it("should convert even though html is not full closed", () => {
+		const input = "<h1>Hello World";
+		const expectedOutput = "# Hello World";
+		expect(convert(input)).toEqual(expectedOutput);
+	});
+
+	// Converts empty input html to empty string.
+	it("should convert empty input", () => {
+		const input = "";
+		const expectedOutput = "";
+		expect(convert(input)).toEqual(expectedOutput);
+	});
+
+	// Converts input html with special characters to markdown.
+	it("should convert special characters", () => {
+		const input = "<p>Special characters: &amp; &lt; &gt; &quot; &#39;</p>";
+		const expectedOutput = "Special characters: & < > \" '";
+		expect(convert(input)).toEqual(expectedOutput);
+	});
+
+	// Converts input html with nested elements to markdown.
+	it("test_convert_nested_elements", () => {
+		const input =
+			"<ul><li>Item 1</li><li>Item 2<ul><li>Subitem 1</li><li>Subitem 2</li></ul></li></ul>";
+		const expectedOutput =
+			"-   Item 1\n-   Item 2\n    -   Subitem 1\n    -   Subitem 2";
+		console.log(convert(input));
+		expect(convert(input)).toEqual(expectedOutput);
+	});
+});
 describe("writeOut", () => {
 	afterEach(() => {
 		jest.resetAllMocks();
