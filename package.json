@@ -32,7 +32,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"clipboardy": "2.3.0",
-		"commander": "6.2.1",
+		"commander": "11.1.0",
 		"turndown": "7.1.2",
 		"turndown-plugin-gfm": "1.0.2"
 	},
