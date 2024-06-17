@@ -99,3 +99,10 @@ Build on these great modules:
 - [domchristie/turndown: An HTML to Markdown converter written in JavaScript](https://github.com/domchristie/turndown)
 - [sindresorhus/clipboardy: Access the system clipboard (copy/paste)](https://github.com/sindresorhus/clipboardy)
 - [tj/commander.js: node.js command-line interfaces made easy](https://github.com/tj/commander.js)
+
+## Related Projects
+
+- suntong/html2md: HTML to Markdown converter https://github.com/suntong/html2md
+- JohannesKaufmann/html-to-markdown: ⚙️ Convert HTML to Markdown. Even works with entire websites and can be extended through rules. https://github.com/JohannesKaufmann/html-to-markdown
+- thebigbone/markhtml: a fast CLI tool for converting markdown to html https://github.com/thebigbone/markhtml
+- letmutex/htmd: A turndown.js inspired HTML to Markdown converter for Rust https://github.com/letmutex/htmd
