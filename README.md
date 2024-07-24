@@ -106,3 +106,4 @@ Build on these great modules:
 - JohannesKaufmann/html-to-markdown: ⚙️ Convert HTML to Markdown. Even works with entire websites and can be extended through rules. https://github.com/JohannesKaufmann/html-to-markdown
 - thebigbone/markhtml: a fast CLI tool for converting markdown to html https://github.com/thebigbone/markhtml
 - letmutex/htmd: A turndown.js inspired HTML to Markdown converter for Rust https://github.com/letmutex/htmd
+- romansky/dom-to-semantic-markdown: DOM to Semantic-Markdown for use in LLMs https://github.com/romansky/dom-to-semantic-markdown
