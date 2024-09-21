@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/ff6347/to-markdown-cli/compare/v1.1.0...v2.0.0) (2024-09-21)
+
+
+### Features
+
+* Minimum Node Version 20 ([8052396](https://github.com/ff6347/to-markdown-cli/commit/8052396542a635be47a5789790a8c51a4abc0bce))
+
+
+### BREAKING CHANGES
+
+* Don't support older node versions
+
 # [1.1.0](https://github.com/ff6347/to-markdown-cli/compare/v1.0.0...v1.1.0) (2023-04-27)
 
 
