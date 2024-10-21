@@ -31,7 +31,7 @@
 	"author": "Fabian Morón Zirfas <icke@fabianmoronzirfas.me> (http://fabianmoronzirfas.me)",
 	"license": "MIT",
 	"dependencies": {
-		"clipboardy": "2.3.0",
+		"clipboardy": "4.0.0",
 		"commander": "6.2.1",
 		"turndown": "7.2.0",
 		"turndown-plugin-gfm": "1.0.2"
