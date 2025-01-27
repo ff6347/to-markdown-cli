@@ -55,7 +55,7 @@
 		"cross-env": "7.0.3",
 		"cz-conventional-changelog": "3.3.0",
 		"eslint": "9.10.0",
-		"eslint-config-prettier": "9.1.0",
+		"eslint-config-prettier": "10.0.1",
 		"eslint-config-unobtrusive": "1.2.5",
 		"eslint-plugin-jest": "28.8.3",
 		"eslint-plugin-prettier": "5.2.1",
