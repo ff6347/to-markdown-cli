@@ -2,11 +2,11 @@ name: Node CI
 
 on:
   push:
-    branches: [master]
+    branches: [master, beta]
     tags:
       - "v*"
   pull_request:
-    branches: [master]
+    branches: [master, beta]
 
 permissions:
   contents: read
