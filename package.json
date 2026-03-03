@@ -46,6 +46,7 @@
 		"url": "git+https://github.com/ff6347/to-markdown-cli.git"
 	},
 	"devDependencies": {
+		"@eslint/eslintrc": "3.3.4",
 		"@technologiestiftung/semantic-release-config": "1.2.4",
 		"@types/mock-fs": "4.13.4",
 		"@types/node": "25.3.3",
@@ -54,7 +55,7 @@
 		"@typescript-eslint/parser": "8.56.1",
 		"all-contributors-cli": "6.26.1",
 		"cz-conventional-changelog": "3.3.0",
-		"eslint": "9.10.0",
+		"eslint": "10.0.2",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-config-unobtrusive": "1.2.5",
 		"eslint-plugin-prettier": "5.5.5",
