@@ -41,7 +41,7 @@
    - Run full build + test suite after each runtime update.
 
 6. **Final verification**
-   - Run `pnpm run build`, `pnpm run test`, and `pnpm run lint`.
+   - Run `pnpm run build`, `pnpm run typecheck`, `pnpm run test`, and `pnpm run lint`.
    - Confirm `pnpm outdated` is clean or only contains known holds.
 
 ## Exit criteria

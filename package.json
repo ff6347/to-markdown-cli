@@ -20,6 +20,7 @@
 		"contributors:check": "all-contributors check",
 		"watch": "tsc -p . -w",
 		"build": "tsc -p .",
+		"typecheck": "tsc -p . --noEmit",
 		"prepare": "pnpm run build",
 		"prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
 		"prettier:list": "pnpm run prettier -- --list-different",

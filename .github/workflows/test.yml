@@ -31,10 +31,11 @@ jobs:
         uses: jdx/mise-action@v2
         with:
           tools: pnpm
-      - name: pnpm install, build, and test
+      - name: pnpm install, build, typecheck, and test
         run: |
           pnpm install
           pnpm run build --if-present
+          pnpm run typecheck
           pnpm run test
         env:
           CI: true
@@ -69,10 +70,11 @@ jobs:
         uses: jdx/mise-action@v2
         with:
           tools: pnpm
-      - name: pnpm install, build, and test
+      - name: pnpm install, build, typecheck, and test
         run: |
           pnpm install
           pnpm run build --if-present
+          pnpm run typecheck
           xvfb-run pnpm run test
         env:
           CI: true
