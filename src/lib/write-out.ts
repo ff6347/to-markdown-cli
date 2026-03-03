@@ -12,7 +12,7 @@ import clipboardy from "clipboardy";
  * Optional flag for using GitHub Flavoured Markdown
  */
 function convert(data: string, usegfm?: any): string {
-	if (usegfm !== undefined) {
+	if (usegfm === true) {
 		turndownService.use(gfm);
 	}
 	return turndownService.turndown(data);
