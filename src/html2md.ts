@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import program from "commander";
+import { program } from "commander";
 import { parseFlags } from "./lib/parse-flags.js";
 import { fileURLToPath } from "url";
 import { writeOut } from "./lib/write-out.js";
@@ -76,12 +76,13 @@ program.on("--help", () => {
 
 if (process.stdin.isTTY) {
 	program.parse(process.argv);
+	const cliOptions = program.opts();
 	const opts = parseFlags({
 		data,
 		inPath,
 		outPath,
-		toClipboard: program.clipboard ? true : undefined,
-		useGfm: program.gfm ? true : undefined,
+		toClipboard: cliOptions.clipboard ? true : undefined,
+		useGfm: cliOptions.gfm ? true : undefined,
 	});
 	writeOut(opts);
 } else {
@@ -93,12 +94,13 @@ if (process.stdin.isTTY) {
 	});
 	process.stdin.on("end", function () {
 		program.parse(process.argv);
+		const cliOptions = program.opts();
 		const opts = parseFlags({
 			data,
 			inPath,
 			outPath,
-			toClipboard: program.clipboard ? true : undefined,
-			useGfm: program.gfm ? true : undefined,
+			toClipboard: cliOptions.clipboard ? true : undefined,
+			useGfm: cliOptions.gfm ? true : undefined,
 		});
 		writeOut(opts);
 	});
