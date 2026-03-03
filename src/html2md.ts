@@ -80,8 +80,8 @@ if (process.stdin.isTTY) {
 		data,
 		inPath,
 		outPath,
-		toClipboard: program.clipboard ? true : false,
-		useGfm: program.gfm ? true : false,
+		toClipboard: program.clipboard ? true : undefined,
+		useGfm: program.gfm ? true : undefined,
 	});
 	writeOut(opts);
 } else {
@@ -93,7 +93,13 @@ if (process.stdin.isTTY) {
 	});
 	process.stdin.on("end", function () {
 		program.parse(process.argv);
-		const opts = parseFlags({ data, inPath, outPath });
+		const opts = parseFlags({
+			data,
+			inPath,
+			outPath,
+			toClipboard: program.clipboard ? true : undefined,
+			useGfm: program.gfm ? true : undefined,
+		});
 		writeOut(opts);
 	});
 }

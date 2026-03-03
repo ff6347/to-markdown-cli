@@ -5,7 +5,7 @@
 
 ## Installation
 
-    npm install -g to-markdown-cli
+    pnpm add -g to-markdown-cli
 
 ## Usage
 
@@ -89,7 +89,7 @@ This project follows the [all-contributors](https://github.com/kentcdodds/all-co
 ## Test
 
 ```bash
-npm run test
+pnpm run test
 ```
 
 
