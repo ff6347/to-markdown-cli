@@ -7,7 +7,7 @@
 
 - Replace Jest-based tests with Node.js built-in test runner (preferred) or Vitest if Node test runner is insufficient.
 - Increase integration coverage for the CLI and real file I/O without mocks.
-- Ensure tests run via the default `npm run test` command.
+- Ensure tests run via the default `pnpm run test` command.
 
 ## Assumptions and constraints
 
@@ -21,7 +21,7 @@
 1. **Baseline discovery**
    - Read `src/` entrypoints to identify CLI flow and existing exports that need coverage.
    - Inspect current Jest config and how tests are invoked.
-   - Verify how `npm run test` is used in CI (if any) and whether a shell test is expected.
+   - Verify how `pnpm run test` is used in CI (if any) and whether a shell test is expected.
 
 2. **Decide on test runner**
    - Try a minimal Node.js test runner setup for TypeScript + ESM.
@@ -46,17 +46,17 @@
    - If it duplicates new CLI tests, remove it to keep a single test runner.
    - If it covers clipboard edge cases, either integrate into new runner or document why it is not runnable in CI.
 
-6. **Wire up `npm run test`**
+6. **Wire up `pnpm run test`**
    - Update `package.json` test script to use `node --test` or `vitest run`.
    - Remove Jest config and dependencies if no longer used.
 
 7. **Validate and document**
-   - Run `npm run test` and ensure clean output.
+   - Run `pnpm run test` and ensure clean output.
    - Update or add any brief docs for how tests are run (only if needed).
 
 ## Exit criteria
 
-- `npm run test` executes the new test runner and passes.
+- `pnpm run test` executes the new test runner and passes.
 - Tests cover CLI inputs/outputs with real file I/O.
 - Jest is removed if no longer used.
 - No tests rely on mocked behavior.

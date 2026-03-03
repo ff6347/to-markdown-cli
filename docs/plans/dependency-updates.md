@@ -11,7 +11,7 @@
 
 ## Assumptions and constraints
 
-- Use `npm` (project uses `package-lock.json`).
+- Use `pnpm` with `--save-exact` for installs.
 - Update dependencies incrementally, one group at a time.
 - Run tests after each update set.
 
@@ -19,15 +19,15 @@
 
 1. **Baseline check**
    - Ensure working tree is clean.
-   - Run `npm test` to confirm the current baseline (once test suite is updated).
+   - Run `pnpm run test` to confirm the current baseline (once test suite is updated).
 
 2. **Align installed versions**
-   - Run `npm install` to align `node_modules` with `package.json`.
-   - Verify `npm outdated` and record the list for the upgrade plan.
+   - Run `pnpm install --save-exact` to align `node_modules` with `package.json`.
+   - Verify `pnpm outdated` and record the list for the upgrade plan.
 
 3. **Low-risk patch/minor updates (dev + runtime)**
    - Update small patch/minor versions first (e.g., `turndown`, `mock-fs`, `ts-jest` if still used, `typescript`, `@types/*`).
-   - Run `npm run build` and `npm run test` after each batch.
+   - Run `pnpm run build` and `pnpm run test` after each batch.
 
 4. **Tooling majors (dev dependencies)**
    - Update lint/test tooling majors one at a time:
@@ -41,8 +41,8 @@
    - Run full build + test suite after each runtime update.
 
 6. **Final verification**
-   - Run `npm run build`, `npm run test`, and `npm run lint`.
-   - Confirm `npm outdated` is clean or only contains known holds.
+   - Run `pnpm run build`, `pnpm run test`, and `pnpm run lint`.
+   - Confirm `pnpm outdated` is clean or only contains known holds.
 
 ## Exit criteria
 

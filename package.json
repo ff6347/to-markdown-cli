@@ -8,23 +8,23 @@
 	"type": "module",
 	"main": "dist/html2md.js",
 	"scripts": {
-		"test": "npm run build && node --test __tests__/*.test.js",
-		"test:watch": "npm run build && node --test --watch __tests__/*.test.js",
-		"testWithCoverage": "npm run build && node --test --experimental-test-coverage __tests__/*.test.js",
+		"test": "pnpm run build && node --test __tests__/*.test.js",
+		"test:watch": "pnpm run build && node --test --watch __tests__/*.test.js",
+		"testWithCoverage": "pnpm run build && node --test --experimental-test-coverage __tests__/*.test.js",
 		"test:tofile": "node dist/html2md.js -i __tests__/index.html -o __tests__/index.md",
 		"//test:stdout": "node dist/index.js -i test/index.html",
 		"//test:gfm": "node dist/index.js -i --gfm test/index.html",
-		"//test": "npm run test:tofile && npm run test:stdout",
+		"//test": "pnpm run test:tofile && pnpm run test:stdout",
 		"contributors:add": "all-contributors add",
 		"contributors:generate": "all-contributors generate",
 		"contributors:check": "all-contributors check",
 		"watch": "tsc -p . -w",
 		"build": "tsc -p .",
-		"prepare": "npm run build",
+		"prepare": "pnpm run build",
 		"prettier": "prettier \"**/*.+(js|json|yml|yaml|ts)\"",
-		"prettier:list": "npm run prettier -- --list-different",
-		"prettier:write": "npm run prettier -- --write",
-		"validate": "npm run build",
+		"prettier:list": "pnpm run prettier -- --list-different",
+		"prettier:write": "pnpm run prettier -- --write",
+		"validate": "pnpm run build",
 		"lint-staged": "lint-staged",
 		"lint": "eslint './src/**/*.ts'"
 	},
@@ -79,7 +79,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run validate && npm run lint-staged"
+			"pre-commit": "pnpm run validate && pnpm run lint-staged"
 		}
 	},
 	"bugs": {
