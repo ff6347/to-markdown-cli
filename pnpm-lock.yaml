@@ -27,6 +27,9 @@ importers:
       '@types/mock-fs':
         specifier: 4.13.4
         version: 4.13.4
+      '@types/node':
+        specifier: 25.3.3
+        version: 25.3.3
       '@types/turndown':
         specifier: 5.0.5
         version: 5.0.5
