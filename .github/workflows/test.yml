@@ -34,7 +34,7 @@ jobs:
       - name: pnpm install, build, typecheck, and test
         run: |
           pnpm install
-          pnpm run build --if-present
+          pnpm run build
           pnpm run typecheck
           pnpm run test
         env:
@@ -73,7 +73,7 @@ jobs:
       - name: pnpm install, build, typecheck, and test
         run: |
           pnpm install
-          pnpm run build --if-present
+          pnpm run build
           pnpm run typecheck
           xvfb-run pnpm run test
         env:
