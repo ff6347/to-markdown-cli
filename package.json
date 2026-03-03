@@ -81,7 +81,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "pnpm run validate && pnpm run lint-staged"
+			"pre-commit": "pnpm run validate && pnpm run typecheck && pnpm run lint-staged"
 		}
 	},
 	"bugs": {
