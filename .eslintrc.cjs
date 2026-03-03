@@ -1,18 +1,15 @@
 module.exports = {
 	extends: [
 		"unobtrusive",
-		"plugin:jest/recommended",
-
 		"plugin:prettier/recommended",
 		"prettier/@typescript-eslint",
 		"plugin:@typescript-eslint/recommended",
 	],
 	env: {
 		node: true,
-		"jest/globals": true,
 	},
 	parser: "@typescript-eslint/parser",
-	plugins: ["@typescript-eslint", "prettier", "jest"],
+	plugins: ["@typescript-eslint", "prettier"],
 	parserOptions: {
 		ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
 		sourceType: "module", // Allows for the use of imports
@@ -21,7 +18,6 @@ module.exports = {
 		"no-console": ["error", { allow: ["warn", "error"] }],
 		"prettier/prettier": "error",
 		camelcase: "off",
-		"jest/no-disabled-tests": "off",
 		"@typescript-eslint/camelcase": ["error", { properties: "never" }],
 		"@typescript-eslint/no-unused-vars": [
 			"warn",
