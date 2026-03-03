@@ -63,7 +63,7 @@
 		"mock-fs": "5.5.0",
 		"prettier": "3.8.1",
 		"semantic-release": "25.0.3",
-		"typescript": "5.5.4"
+		"typescript": "5.9.3"
 	},
 	"contributors": [
 		"Fabian Morón Zirfas <icke@fabianmoronzirfas.me> (https://fabianmoronzirfas.me)",
