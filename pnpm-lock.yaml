@@ -55,8 +55,8 @@ importers:
         specifier: 1.2.5
         version: 1.2.5(eslint@9.10.0(jiti@2.6.1))
       eslint-plugin-prettier:
-        specifier: 5.2.1
-        version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@2.6.1)))(eslint@9.10.0(jiti@2.6.1))(prettier@3.3.3)
+        specifier: 5.5.5
+        version: 5.5.5(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@2.6.1)))(eslint@9.10.0(jiti@2.6.1))(prettier@3.3.3)
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -281,8 +281,8 @@ packages:
   '@octokit/types@16.0.0':
     resolution: {integrity: sha512-sKq+9r1Mm4efXW1FCk7hFSeJo4QKreL/tTbR0rz/qx/r1Oa2VV83LTA/H/MuCOX7uCIJmQVRKBcbmWoySjAnSg==}
 
-  '@pkgr/core@0.1.2':
-    resolution: {integrity: sha512-fdDH1LSGfZdTH2sxdpVMw31BanV28K/Gry0cVFxaNP77neJSkd82mM8ErPNYs9e+0O7SdHBLTDzDgwUuy18RnQ==}
+  '@pkgr/core@0.2.9':
+    resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
   '@pnpm/config.env-replace@1.1.0':
@@ -906,13 +906,13 @@ packages:
     peerDependencies:
       eslint: '>=4.0.0'
 
-  eslint-plugin-prettier@5.2.1:
-    resolution: {integrity: sha512-gH3iR3g4JfF+yYPaJYkN7jEl9QbweL/YfkoRlNnuIEHEz1vHVlCmWOS+eGGiRuzHQXdJFCOTxRgvju9b8VUmrw==}
+  eslint-plugin-prettier@5.5.5:
+    resolution: {integrity: sha512-hscXkbqUZ2sPithAuLm5MXL+Wph+U7wHngPBv9OMWwlP8iaflyxpjTYZkmdgB4/vPIhemRlBEoLrH7UC1n7aUw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
       eslint: '>=8.0.0'
-      eslint-config-prettier: '*'
+      eslint-config-prettier: '>= 7.0.0 <10.0.0 || >=10.1.0'
       prettier: '>=3.0.0'
     peerDependenciesMeta:
       '@types/eslint':
@@ -2367,8 +2367,8 @@ packages:
     resolution: {integrity: sha512-zFObLMyZeEwzAoKCyu1B91U79K2t7ApXuQfo8OuxwXLDgcKxuwM+YvcbIhm6QWqz7mHUH1TVytR1PwVVjEuMig==}
     engines: {node: '>=14.18'}
 
-  synckit@0.9.3:
-    resolution: {integrity: sha512-JJoOEKTfL1urb1mDoEblhD9NhEbWmq9jHEMEnxoC4ujUaZ4itA8vKgwkFAyNClgxplLi9tsUKX+EduK0p/l7sg==}
+  synckit@0.11.12:
+    resolution: {integrity: sha512-Bh7QjT8/SuKUIfObSXNHNSK6WHo6J1tHCqJsuaFDP7gP0fkzSfTxI8y85JrppZ0h8l0maIgc2tfuZQ6/t3GtnQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
   tagged-tag@1.0.0:
@@ -2891,7 +2891,7 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 27.0.0
 
-  '@pkgr/core@0.1.2': {}
+  '@pkgr/core@0.2.9': {}
 
   '@pnpm/config.env-replace@1.1.0': {}
 
@@ -3645,12 +3645,12 @@ snapshots:
     dependencies:
       eslint: 9.10.0(jiti@2.6.1)
 
-  eslint-plugin-prettier@5.2.1(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@2.6.1)))(eslint@9.10.0(jiti@2.6.1))(prettier@3.3.3):
+  eslint-plugin-prettier@5.5.5(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@2.6.1)))(eslint@9.10.0(jiti@2.6.1))(prettier@3.3.3):
     dependencies:
       eslint: 9.10.0(jiti@2.6.1)
       prettier: 3.3.3
       prettier-linter-helpers: 1.0.1
-      synckit: 0.9.3
+      synckit: 0.11.12
     optionalDependencies:
       eslint-config-prettier: 9.1.0(eslint@9.10.0(jiti@2.6.1))
 
@@ -4966,10 +4966,9 @@ snapshots:
       has-flag: 4.0.0
       supports-color: 7.2.0
 
-  synckit@0.9.3:
+  synckit@0.11.12:
     dependencies:
-      '@pkgr/core': 0.1.2
-      tslib: 2.8.1
+      '@pkgr/core': 0.2.9
 
   tagged-tag@1.0.0: {}
 
