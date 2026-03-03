@@ -27,12 +27,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
+      - name: Setup pnpm
+        uses: jdx/mise-action@v2
+        with:
+          tools: pnpm
+      - name: pnpm install, build, and test
         run: |
-          npm install -g npm
-          npm ci
-          npm run build --if-present
-          npm test
+          pnpm install
+          pnpm run build --if-present
+          pnpm run test
         env:
           CI: true
           NODE_ENV: test
@@ -62,12 +65,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
+      - name: Setup pnpm
+        uses: jdx/mise-action@v2
+        with:
+          tools: pnpm
+      - name: pnpm install, build, and test
         run: |
-          npm install -g npm
-          npm ci
-          npm run build --if-present
-          xvfb-run npm test
+          pnpm install
+          pnpm run build --if-present
+          xvfb-run pnpm run test
         env:
           CI: true
           NODE_ENV: test
@@ -80,14 +86,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-      - run: |
-          npm install -g npm
-          npm ci
+      - name: Setup mise
+        uses: jdx/mise-action@v2
+      - run: pnpm install
       - id: semantic-release
-        run: npx semantic-release
+        run: pnpm exec semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
